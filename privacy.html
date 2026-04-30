@@ -10,3 +10,109 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--void:#05030f;--deep:#0a061e;--abyss:#0f0a24;--p2:#2d1870;--p3:#5535b8;--p4:#8a65d4;--p5:#b89de8;--silver:#c4c4d4;--silver-bright:#e8e8f2;--silver-dim:#7a7a96;--white:#f8f4ff;--gold:#c8a96e}
+html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--silver);font-family:"Cormorant Garamond",serif;font-weight:300;overflow-x:hidden}
+.cosmos{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.cosmos-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 20% 30%,rgba(45,24,112,.5) 0%,transparent 65%),radial-gradient(ellipse 50% 70% at 80% 70%,rgba(29,14,72,.4) 0%,transparent 60%),var(--void);animation:bgpulse 18s ease-in-out infinite alternate}
+@keyframes bgpulse{0%{opacity:1}100%{opacity:.88}}
+.stars{position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 15% 20%,rgba(184,157,232,.6) 0%,transparent 100%),radial-gradient(1px 1px at 45% 10%,rgba(248,244,255,.8) 0%,transparent 100%),radial-gradient(1px 1px at 75% 35%,rgba(196,196,212,.5) 0%,transparent 100%),radial-gradient(2px 2px at 30% 70%,rgba(184,157,232,.5) 0%,transparent 100%),radial-gradient(1px 1px at 85% 80%,rgba(196 196,212,.4) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 60% 55%,rgba(248,244,255,.7) 0%,transparent 100%);animation:twinkle 10s ease-in-out infinite alternate}
+@keyframes twinkle{0%{opacity:.6}100%{opacity:.9}}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(to bottom,rgba(5,3,15,.95) 0%,transparent 100%)}
+.nav-logo img{width:36px;height:auto;filter:drop-shadow(0 0 10px rgba(133,83,184,.5))}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-family:"Inter",sans-serif;font-size:.68rem;font-weight:200;letter-spacing:.25em;text-transform:uppercase;color:var(--silver-dim);text-decoration:none;transition:color .3s}
+.nav-links a:hover{color:var(--silver-bright)}
+.nav-begin{font-family:"Inter",sans-serif;font-size:.68rem;font-weight:200;letter-spacing:.2em;text-transform:uppercase;color:var(--white);text-decoration:none;border:1px solid rgba(133,83,184,.45);padding:.55rem 1.5rem;border-radius:1px;background:rgba(85,53,184,.1);transition:all .35s}
+.nav-begin:hover{background:rgba(85,53,184,.25);border-color:rgba(184,157,232,.8)}
+.page-hero{position:relative;z-index:1;padding:10rem 2rem 5rem;text-align:center;border-bottom:1px solid rgba(85,53,184,.1)}
+.page-tag{font-family:"Inter",sans-serif;font-size:.65rem;font-weight:200;letter-spacing:.38em;text-transform:uppercase;color:var(--p4);margin-bottom:1rem;display:block}
+.page-rule{width:40px;height:1px;background:linear-gradient(to right,transparent,var(--p3),transparent);margin:0 auto 1.5rem}
+.page-title{font-family:"Cinzel",serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:var(--white);letter-spacing:.08em;margin-bottom:1rem;text-shadow:0 0 60px rgba(133,83,184,.4)}
+.page-sub{font-size:clamp(1rem,1.8vw,1.2rem);font-style:italic;color:var(--silver);max-width:620px;margin:0 auto;line-height:1.9}
+.page-body{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:5rem 2rem}
+.section-tag{font-family:"Inter",sans-serif;font-size:.62rem;font-weight:200;letter-spacing:.35em;text-transform:uppercase;color:var(--p4);margin-bottom:.8rem;display:block}
+.section-rule{width:30px;height:1px;background:linear-gradient(to right,var(--p3),transparent);margin-bottom:1.2rem}
+.section-title{font-family:"Cinzel",serif;font-size:clamp(1.3rem,2.5vw,2rem);font-weight:400;color:var(--white);letter-spacing:.06em;margin-bottom:1.2rem}
+.section-body{font-size:clamp(.95rem,1.6vw,1.12rem);font-style:italic;line-height:1.95;color:var(--silver)}
+.section-body strong{font-style:normal;color:var(--silver-bright)}
+.btn-p{font-family:"Inter",sans-serif;font-size:.7rem;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:var(--void);background:linear-gradient(135deg,var(--silver-bright),var(--p5));padding:1rem 2.5rem;border:none;border-radius:1px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .35s}
+.btn-p:hover{box-shadow:0 0 50px rgba(133,83,184,.5);transform:translateY(-1px)}
+.btn-s{font-family:"Inter",sans-serif;font-size:.7rem;font-weight:300;letter-spacing:.22em;text-transform:uppercase;color:var(--silver);background:transparent;padding:1rem 2.5rem;border:1px solid rgba(133,83,184,.4);border-radius:1px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .35s}
+.btn-s:hover{border-color:rgba(184,157,232,.8);color:var(--white);background:rgba(85,53,184,.1)}
+footer{position:relative;z-index:1;border-top:1px solid rgba(85,53,184,.1);padding:3rem 2rem;text-align:center}
+.footer-logo{width:45px;height:auto;margin:0 auto .8rem;display:block;filter:drop-shadow(0 0 10px rgba(133,83,184,.4))}
+.footer-name{font-family:"Cinzel",serif;font-size:.85rem;font-weight:500;letter-spacing:.2em;color:var(--white);margin-bottom:1rem}
+.footer-links{display:flex;justify-content:center;gap:1.8rem;list-style:none;flex-wrap:wrap;margin-bottom:1rem}
+.footer-links a{font-family:"Inter",sans-serif;font-size:.6rem;font-weight:200;letter-spacing:.18em;text-transform:uppercase;color:var(--silver-dim);text-decoration:none;transition:color .3s}
+.footer-links a:hover{color:var(--silver)}
+.footer-legal{font-family:"Inter",sans-serif;font-size:.58rem;letter-spacing:.08em;color:rgba(122,122,150,.4)}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .9s ease,transform .9s ease}
+.reveal.on{opacity:1;transform:translateY(0)}
+@media(max-width:768px){nav{padding:1.2rem 1.5rem}.nav-links{display:none}}
+</style>
+
+
+</head>
+<body>
+<div class="cosmos"><div class="cosmos-bg"></div><div class="stars"></div></div>
+<nav>
+  <a class="nav-logo" href="index.html"><img src="logo.png" alt="White Flame Legacy"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#web">Portals</a></li>
+    <li><a href="the-flame.html">The Flame</a></li>
+    <li><a href="connect.html">Connect</a></li>
+  </ul>
+  <a class="nav-begin" href="index.html#" onclick="return false">Begin</a>
+</nav>
+<section class="page-hero">
+  <span class="page-tag">Legal</span>
+  <div class="page-rule"></div>
+  <h1 class="page-title">Privacy Policy</h1>
+  <p class="page-sub">Your information is sacred. We honour your privacy completely.</p>
+</section>
+<main class="page-body">
+
+<div class="reveal">
+  <p style="font-family:Inter,sans-serif;font-size:.65rem;letter-spacing:.15em;color:var(--silver-dim);margin-bottom:2rem">Last updated: June 2025</p>
+  <p class="section-body" style="margin-bottom:2rem">White Flame Legacy (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;Kalista&rdquo;) is committed to protecting your personal information and your right to privacy.</p>
+  
+  <h3 style="font-family:Cinzel,serif;color:var(--white);margin:2rem 0 .8rem;font-size:1.1rem">Information We Collect</h3>
+  <p class="section-body">We collect information you voluntarily provide — including your name, email address, phone number, and any details shared through our booking and contact forms. We do not collect payment information directly on this website.</p>
+  
+  <h3 style="font-family:Cinzel,serif;color:var(--white);margin:2rem 0 .8rem;font-size:1.1rem">How We Use Your Information</h3>
+  <p class="section-body">Your information is used solely to respond to your enquiries, confirm bookings, and send relevant communications you have opted into. We do not sell, trade, or transfer your information to third parties.</p>
+  
+  <h3 style="font-family:Cinzel,serif;color:var(--white);margin:2rem 0 .8rem;font-size:1.1rem">Your Rights</h3>
+  <p class="section-body">You have the right to request access to, correction of, or deletion of your personal data at any time. To exercise these rights, contact us at kalistawhiteflame@gmail.com.</p>
+  
+  <h3 style="font-family:Cinzel,serif;color:var(--white);margin:2rem 0 .8rem;font-size:1.1rem">Contact</h3>
+  <p class="section-body">For any privacy-related questions: <a href="mailto:kalistawhiteflame@gmail.com" style="color:var(--p5)">kalistawhiteflame@gmail.com</a></p>
+</div>
+</main>
+<footer>
+  <img class="footer-logo" src="logo.png" alt="White Flame Legacy">
+  <div class="footer-name">White Flame Legacy</div>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="the-flame.html">The Flame</a></li>
+    <li><a href="quantum-soul-recalibration.html">Sessions</a></li>
+    <li><a href="quantum-activation-circles.html">Circles</a></li>
+    <li><a href="ancestral-web.html">Ancestral Web</a></li>
+    <li><a href="meditations.html">Meditations</a></li>
+    <li><a href="connect.html">Connect</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="terms.html">Terms</a></li>
+  </ul>
+  <p class="footer-legal">&copy; 2025 White Flame Legacy. All Rights Reserved. | whiteflamelegacy.com</p>
+</footer>
+<script>
+var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add("on")});},{threshold:.1});
+document.querySelectorAll(".reveal").forEach(function(el){ro.observe(el);});
+</script>
+
+</body>
+</html>
