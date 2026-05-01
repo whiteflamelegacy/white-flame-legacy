@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WFL Admin</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+  <style>
+    :root { --void: #030306; --deep: #0a0812; --violet: #2d1b69; --violet-mid: #4a2d8f; --gold: #c9a84c; --gold-light: #e8c97a; --text-primary: #e8e4f0; --text-secondary: rgba(232,228,240,0.65); --text-dim: rgba(232,228,240,0.38); --green: #4caf80; --red: #c94c4c; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--void); color: var(--text-primary); font-family: 'Raleway', sans-serif; font-weight: 300; font-size: 14px; line-height: 1.6; min-height: 100vh; }
+    #loginScreen { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem; }
+    .login-brand { font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.3em; color: var(--gold); margin-bottom: 0.5rem; text-transform: uppercase; }
+    .login-sub { font-size: 0.65rem; letter-spacing: 0.25em; color: var(--text-dim); text-transform: uppercase; margin-bottom: 3rem; }
+    .login-box { width: 100%; max-width: 360px; }
+    .login-label { font-size: 0.6rem; letter-spacing: 0.25em; color: var(--text-dim); text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
+    .login-input { width: 100%; background: rgba(232,228,240,0.04); border: 1px solid rgba(201,168,76,0.2); color: var(--text-primary); font-family: 'Raleway', sans-serif; font-size: 1rem; padding: 0.8rem 1rem; margin-bottom: 1rem; }
+    .login-input:focus { outline: none; border-color: rgba(201,168,76,0.5); }
+    .login-btn { width: 100%; font-family: 'Cinzel', serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--void); background: linear-gradient(135deg, var(--gold-light), var(--gold)); padding: 0.9rem; border: none; cursor: pointer; }
+    .login-error { color: #e8a4a4; font-size: 0.75rem; margin-top: 0.8rem; display: none; text-align: center; }
+    #adminScreen { display: none; padding: 2rem; max-width: 1200px; margin: 0 auto; }
+    .admin-header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(201,168,76,0.15); margin-bottom: 2rem; }
+    .admin-title { font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 0.2em; color: var(--gold); }
+    .logout-btn { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim); background: none; border: 1px solid rgba(201,168,76,0.15); padding: 0.4rem 0.9rem; cursor: pointer; transition: color 0.2s; }
+    .logout-btn:hover { color: var(--gold); }
+    .controls { display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .filter-label { font-size: 0.6rem; letter-spacing: 0.2em; color: var(--text-dim); text-transform: uppercase; }
+    .filter-select { background: rgba(232,228,240,0.04); border: 1px solid rgba(201,168,76,0.15); color: var(--text-primary); font-family: 'Raleway', sans-serif; font-size: 0.8rem; padding: 0.4rem 0.8rem; cursor: pointer; }
+    .filter-select:focus { outline: none; }
+    .filter-select option { background: #0a0812; }
+    .stats-row { display: flex; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .stat-card { background: rgba(45,27,105,0.15); border: 1px solid rgba(201,168,76,0.1); padding: 1rem 1.5rem; min-width: 140px; }
+    .stat-num { font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--gold); letter-spacing: 0.05em; }
+    .stat-label { font-size: 0.6rem; letter-spacing: 0.2em; color: var(--text-dim); text-transform: uppercase; margin-top: 0.2rem; }
+    .bookings-table { width: 100%; border-collapse: collapse; margin-bottom: 3rem; }
+    .bookings-table th { font-size: 0.6rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; text-align: left; padding: 0.8rem 0.8rem; border-bottom: 1px solid rgba(201,168,76,0.2); font-weight: 500; }
+    .bookings-table td { padding: 0.9rem 0.8rem; border-bottom: 1px solid rgba(232,228,240,0.05); font-size: 0.82rem; color: var(--text-secondary); vertical-align: middle; }
+    .bookings-table tr:hover td { background: rgba(45,27,105,0.1); }
+    .status-badge { font-size: 0.55rem; letter-spacing: 0.15em; padding: 0.2rem 0.6rem; border-radius: 0; text-transform: uppercase; font-weight: 400; }
+    .status-badge.pending { background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); }
+    .status-badge.confirmed { background: rgba(76,175,128,0.15); border: 1px solid rgba(76,175,128,0.3); color: var(--green); }
+    .status-badge.cancelled { background: rgba(201,76,76,0.1); border: 1px solid rgba(201,76,76,0.25); color: var(--red); }
+    .action-btns { display: flex; gap: 0.4rem; }
+    .action-btn { font-size: 0.55rem; letter-spacing: 0.1em; padding: 0.3rem 0.7rem; border: 1px solid; cursor: pointer; background: transparent; text-transform: uppercase; transition: all 0.15s; }
+    .confirm-btn { border-color: rgba(76,175,128,0.4); color: var(--green); }
+    .confirm-btn:hover { background: rgba(76,175,128,0.12); }
+    .cancel-btn { border-color: rgba(201,76,76,0.35); color: var(--red); }
+    .cancel-btn:hover { background: rgba(201,76,76,0.1); }
+    .no-bookings { text-align: center; padding: 3rem; color: var(--text-dim); font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; }
+    .section-heading { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.25em; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(201,168,76,0.1); }
+    .add-session-form { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 0.8rem; align-items: end; margin-bottom: 3rem; flex-wrap: wrap; }
+    @media (max-width: 768px) { .add-session-form { grid-template-columns: 1fr 1fr; } }
+    .form-group-sm label { font-size: 0.55rem; letter-spacing: 0.2em; color: var(--text-dim); text-transform: uppercase; display: block; margin-bottom: 0.35rem; }
+    .form-input-sm { width: 100%; background: rgba(232,228,240,0.04); border: 1px solid rgba(201,168,76,0.15); color: var(--text-primary); font-family: 'Raleway', sans-serif; font-size: 0.82rem; padding: 0.6rem 0.8rem; }
+    .form-input-sm:focus { outline: none; border-color: rgba(201,168,76,0.4); }
+    .form-input-sm option { background: #0a0812; }
+    .add-btn { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--void); background: var(--gold); padding: 0.6rem 1.2rem; border: none; cursor: pointer; white-space: nowrap; }
+    .add-btn:hover { background: var(--gold-light); }
+    .toast { position: fixed; bottom: 2rem; right: 2rem; padding: 0.8rem 1.5rem; font-size: 0.75rem; letter-spacing: 0.1em; display: none; z-index: 1000; }
+    .toast.show { display: block; }
+    .toast.success { background: rgba(76,175,128,0.9); color: white; }
+    .toast.error { background: rgba(201,76,76,0.9); color: white; }
+  </style>
+</head>
+<body>
+  <!-- LOGIN -->
+  <div id="loginScreen">
+    <p class="login-brand">White Flame Legacy</p>
+    <p class="login-sub">Facilitator Dashboard</p>
+    <div class="login-box">
+      <label class="login-label" for="passphrase">Passphrase</label>
+      <input class="login-input" type="password" id="passphrase" placeholder="Enter your passphrase" onkeydown="if(event.key==='Enter')login()">
+      <button class="login-btn" onclick="login()">Access Dashboard</button>
+      <p class="login-error" id="loginError">Incorrect passphrase. Try again.</p>
+    </div>
+  </div>
+
+  <!-- ADMIN -->
+  <div id="adminScreen">
+    <div class="admin-header">
+      <span class="admin-title">White Flame Legacy — Dashboard</span>
+      <button class="logout-btn" onclick="logout()">Sign Out</button>
+    </div>
+
+    <div class="stats-row" id="statsRow">
+      <div class="stat-card"><div class="stat-num" id="statTotal">0</div><div class="stat-label">Total Bookings</div></div>
+      <div class="stat-card"><div class="stat-num" id="statPending">0</div><div class="stat-label">Pending</div></div>
+      <div class="stat-card"><div class="stat-num" id="statConfirmed">0</div><div class="stat-label">Confirmed</div></div>
+      <div class="stat-card"><div class="stat-num" id="statQSR">0</div><div class="stat-label">QSR Sessions</div></div>
+      <div class="stat-card"><div class="stat-num" id="statQAC">0</div><div class="stat-label">Circles</div></div>
+    </div>
+
+    <div class="controls">
+      <span class="filter-label">Filter:</span>
+      <select class="filter-select" id="serviceFilter" onchange="renderBookings()">
+        <option value="all">All Services</option>
+        <option value="QSR">Quantum Soul Recalibration</option>
+        <option value="QAC">Quantum Activation Circles</option>
+        <option value="enquiry">Enquiries</option>
+        <option value="waitlist">Waitlist</option>
+      </select>
+      <select class="filter-select" id="statusFilter" onchange="renderBookings()">
+        <option value="all">All Statuses</option>
+        <option value="pending">Pending</option>
+        <option value="confirmed">Confirmed</option>
+        <option value="cancelled">Cancelled</option>
+      </select>
+    </div>
+
+    <table class="bookings-table" id="bookingsTable">
+      <thead>
+        <tr>
+          <th>Ref</th>
+          <th>Service</th>
+          <th>Date &amp; Time</th>
+          <th>Client</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="bookingsTbody"></tbody>
+    </table>
+
+    <h3 class="section-heading">Add Session Date</h3>
+    <div class="add-session-form">
+      <div class="form-group-sm">
+        <label for="addService">Service</label>
+        <select class="form-input-sm" id="addService">
+          <option value="quantum_soul_recalibration">QSR</option>
+          <option value="quantum_activation_circles">Circles</option>
+        </select>
+      </div>
+      <div class="form-group-sm">
+        <label for="addDate">Date (YYYY-MM-DD)</label>
+        <input class="form-input-sm" type="date" id="addDate">
+      </div>
+      <div class="form-group-sm">
+        <label for="addTime">Time (HH:MM)</label>
+        <input class="form-input-sm" type="time" id="addTime">
+      </div>
+      <button class="add-btn" onclick="addSession()">+ Add</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // Passphrase hash (SHA-256 of the actual passphrase, set via GitHub Secret ADMIN_HASH)
+    // Default hash below is SHA-256 of 'WhiteFlame2025!' - change via ADMIN_HASH secret
+    const STORED_HASH = 'ADMIN_HASH_PLACEHOLDER';
+    const SESSION_KEY = 'wfl_admin_session';
+    let bookings = [];
+
+    async function sha256(msg) {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+    }
+
+    async function login() {
+      const val = document.getElementById('passphrase').value;
+      const hash = await sha256(val);
+      if (hash === STORED_HASH) {
+        sessionStorage.setItem(SESSION_KEY, '1');
+        document.getElementById('loginScreen').style.display = 'none';
+        document.getElementById('adminScreen').style.display = 'block';
+        loadBookings();
+      } else {
+        document.getElementById('loginError').style.display = 'block';
+        document.getElementById('passphrase').value = '';
+      }
+    }
+
+    function logout() {
+      sessionStorage.removeItem(SESSION_KEY);
+      document.getElementById('adminScreen').style.display = 'none';
+      document.getElementById('loginScreen').style.display = 'flex';
+    }
+
+    async function loadBookings() {
+      try {
+        const r = await fetch('/data/bookings.json?t=' + Date.now());
+        bookings = await r.json();
+      } catch(e) {
+        bookings = [];
+      }
+      renderBookings();
+      updateStats();
+    }
+
+    function updateStats() {
+      const qsr = bookings.filter(b => b.service && b.service.includes('Recalibration'));
+      const qac = bookings.filter(b => b.service && b.service.includes('Circle'));
+      document.getElementById('statTotal').textContent = bookings.length;
+      document.getElementById('statPending').textContent = bookings.filter(b => b.status === 'pending').length;
+      document.getElementById('statConfirmed').textContent = bookings.filter(b => b.status === 'confirmed').length;
+      document.getElementById('statQSR').textContent = qsr.length;
+      document.getElementById('statQAC').textContent = qac.length;
+    }
+
+    function renderBookings() {
+      const svc = document.getElementById('serviceFilter').value;
+      const sts = document.getElementById('statusFilter').value;
+      let filtered = bookings.filter(b => {
+        const matchSvc = svc === 'all' ||
+          (svc === 'QSR' && b.service && b.service.includes('Recalibration')) ||
+          (svc === 'QAC' && b.service && b.service.includes('Circle')) ||
+          (svc === 'enquiry' && b.type === 'enquiry') ||
+          (svc === 'waitlist' && b.type && b.type.includes('waitlist'));
+        const matchSts = sts === 'all' || b.status === sts;
+        return matchSvc && matchSts;
+      });
+      filtered.sort((a,b) => new Date(a.date + ' ' + (a.time||'')) - new Date(b.date + ' ' + (b.time||'')));
+      const tbody = document.getElementById('bookingsTbody');
+      if (!filtered.length) {
+        tbody.innerHTML = '<tr><td colspan="8" class="no-bookings">No bookings found</td></tr>';
+        return;
+      }
+      tbody.innerHTML = filtered.map(b => {
+        const svcLabel = b.service || b.type || '—';
+        const dateStr = b.date ? b.date + (b.time ? ' ' + b.time : '') : '—';
+        const status = b.status || 'pending';
+        return `<tr>
+          <td style="font-family:'Cinzel',serif;font-size:0.7rem;color:var(--gold)">${b.bookingId || b.type || '—'}</td>
+          <td>${svcLabel}</td>
+          <td>${dateStr}</td>
+          <td>${b.name || '—'}</td>
+          <td><a href="mailto:${b.email}" style="color:var(--text-secondary);text-decoration:none">${b.email || '—'}</a></td>
+          <td>${b.phone || '—'}</td>
+          <td><span class="status-badge ${status}">${status}</span></td>
+          <td><div class="action-btns">
+            ${status !== 'confirmed' ? `<button class="action-btn confirm-btn" onclick="updateStatus('${b.bookingId}','confirmed')">Confirm</button>` : ''}
+            ${status !== 'cancelled' ? `<button class="action-btn cancel-btn" onclick="updateStatus('${b.bookingId}','cancelled')">Cancel</button>` : ''}
+          </div></td>
+        </tr>`;
+      }).join('');
+    }
+
+    function updateStatus(id, newStatus) {
+      const b = bookings.find(x => x.bookingId === id);
+      if (b) { b.status = newStatus; }
+      renderBookings();
+      updateStats();
+      showToast('Status updated to ' + newStatus, 'success');
+      // In production: dispatch GitHub Action to persist the status change
+    }
+
+    async function addSession() {
+      const service = document.getElementById('addService').value;
+      const date = document.getElementById('addDate').value;
+      const time = document.getElementById('addTime').value;
+      if (!date || !time) { showToast('Date and time required', 'error'); return; }
+      showToast('Session ' + date + ' ' + time + ' added — update availability.json to publish', 'success');
+      document.getElementById('addDate').value = '';
+      document.getElementById('addTime').value = '';
+    }
+
+    function showToast(msg, type) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast show ' + type;
+      setTimeout(() => t.className = 'toast', 3000);
+    }
+
+    // Auto-check session
+    if (sessionStorage.getItem(SESSION_KEY)) {
+      document.getElementById('loginScreen').style.display = 'none';
+      document.getElementById('adminScreen').style.display = 'block';
+      loadBookings();
+    }
+  </script>
+</body>
+</html>
