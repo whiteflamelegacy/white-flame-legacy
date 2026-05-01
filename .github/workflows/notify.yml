@@ -1,0 +1,51 @@
+name: WFL Notifications
+
+on:
+  repository_dispatch:
+    types: [booking, enquiry, waitlist, corporate_enquiry]
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build email body
+        id: build
+        run: |
+          EVENT_TYPE="${{ github.event.action }}"
+          PAYLOAD='${{ toJson(github.event.client_payload) }}'
+          echo "event_type=$EVENT_TYPE" >> $GITHUB_OUTPUT
+          echo "payload=$PAYLOAD" >> $GITHUB_OUTPUT
+
+      - name: Send notification email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "WFL — New ${{ github.event.action }}: ${{ github.event.client_payload.name || github.event.client_payload.contact || 'Unknown' }}"
+          to: kalistawhiteflame@gmail.com
+          from: "White Flame Legacy <${{ secrets.SMTP_USERNAME }}>"
+          html_body: |
+            <html>
+            <body style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+              <div style="border-left: 3px solid #c9a84c; padding-left: 20px; margin-bottom: 24px;">
+                <h2 style="font-family: Georgia, serif; color: #c9a84c; margin: 0 0 4px;">White Flame Legacy</h2>
+                <p style="margin: 0; font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 2px;">New ${{ github.event.action }}</p>
+              </div>
+
+              <table style="width: 100%; border-collapse: collapse;">
+                <tr><td style="padding: 8px 0; border-bottom: 1px solid #eee; width: 140px; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px;">Type</td><td style="padding: 8px 0; border-bottom: 1px solid #eee;">${{ github.event.action }}</td></tr>
+                <tr><td style="padding: 8px 0; border-bottom: 1px solid #eee; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px;">Name</td><td style="padding: 8px 0; border-bottom: 1px solid #eee;">${{ github.event.client_payload.name || github.event.client_payload.contact || '—' }}</td></tr>
+                <tr><td style="padding: 8px 0; border-bottom: 1px solid #eee; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px;">Email</td><td style="padding: 8px 0; border-bottom: 1px solid #eee;">${{ github.event.client_payload.email || '—' }}</td></tr>
+                <tr><td style="padding: 8px 0; border-bottom: 1px solid #eee; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px;">Phone</td><td style="padding: 8px 0; border-bottom: 1px solid #eee;">${{ github.event.client_payload.phone || '—' }}</td></tr>
+                <tr><td style="padding: 8px 0; border-bottom: 1px solid #eee; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px;">Service</td><td style="padding: 8px 0; border-bottom: 1px solid #eee;">${{ github.event.client_payload.service || github.event.client_payload.type || '—' }}</td></tr>
+                <tr><td style="padding: 8px 0; border-bottom: 1px solid #eee; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px;">Date</td><td style="padding: 8px 0; border-bottom: 1px solid #eee;">${{ github.event.client_payload.date || '—' }}</td></tr>
+                <tr><td style="padding: 8px 0; border-bottom: 1px solid #eee; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px;">Time</td><td style="padding: 8px 0; border-bottom: 1px solid #eee;">${{ github.event.client_payload.time || '—' }}</td></tr>
+                <tr><td style="padding: 8px 0; border-bottom: 1px solid #eee; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px;">Booking Ref</td><td style="padding: 8px 0; border-bottom: 1px solid #eee; font-family: monospace; color: #c9a84c;">${{ github.event.client_payload.bookingId || '—' }}</td></tr>
+                <tr><td style="padding: 8px 0; font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px;">Message</td><td style="padding: 8px 0;">${{ github.event.client_payload.message || github.event.client_payload.subject || '—' }}</td></tr>
+              </table>
+
+              <p style="margin-top: 32px; font-size: 11px; color: #aaa;">Sent by White Flame Legacy automated notification system.<br>whiteflamelegacy.com</p>
+            </body>
+            </html>
