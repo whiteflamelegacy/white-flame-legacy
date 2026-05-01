@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book &amp; Connect — White Flame Legacy</title>
+  <meta name="description" content="Contact and logistics. Send an enquiry to White Flame Legacy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
+  <style>
+    :root { --void: #030306; --violet: #2d1b69; --gold: #c9a84c; --gold-light: #e8c97a; --text-primary: #e8e4f0; --text-secondary: rgba(232,228,240,0.65); --text-dim: rgba(232,228,240,0.38); }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--void); color: var(--text-primary); font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 18px; line-height: 1.8; overflow-x: hidden; }
+    body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(ellipse 50% 50% at 80% 20%, rgba(45,27,105,0.3) 0%, transparent 65%), radial-gradient(ellipse 40% 40% at 20% 80%, rgba(29,14,72,0.25) 0%, transparent 60%); pointer-events: none; z-index: 0; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem 3rem; display: flex; align-items: center; justify-content: space-between; background: linear-gradient(to bottom, rgba(3,3,6,0.95) 0%, transparent 100%); border-bottom: 1px solid rgba(201,168,76,0.08); }
+    .nav-brand { font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.22em; color: var(--gold); text-decoration: none; text-transform: uppercase; }
+    .nav-back { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 300; letter-spacing: 0.18em; color: var(--text-dim); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+    .nav-back:hover { color: var(--gold); }
+    .hero { position: relative; z-index: 1; min-height: 45vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 9rem 2rem 3rem; }
+    .hero-overline { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 1s 0.3s ease forwards; }
+    .hero-title { font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 400; letter-spacing: 0.1em; margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 1.2s 0.5s ease forwards; }
+    .hero-title span { background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, #a07830 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-divider { width: 60px; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); margin: 0 auto; opacity: 0; animation: fadeIn 1s 0.8s ease forwards; }
+    .page-content { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 4rem 2rem 8rem; }
+    .section-label { font-family: 'Cinzel', serif; font-size: 0.6rem; font-weight: 500; letter-spacing: 0.5em; color: var(--gold); text-transform: uppercase; margin-bottom: 1rem; display: block; }
+    .intro-text { font-size: clamp(1rem, 2vw, 1.1rem); line-height: 1.9; color: var(--text-secondary); margin-bottom: 3rem; }
+    .form-group { margin-bottom: 1.6rem; }
+    .form-label { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.2em; color: var(--text-dim); text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
+    .form-input { width: 100%; background: rgba(232,228,240,0.04); border: 1px solid rgba(201,168,76,0.15); color: var(--text-primary); font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1rem; padding: 0.9rem 1rem; transition: border-color 0.2s; appearance: none; -webkit-appearance: none; }
+    .form-input:focus { outline: none; border-color: rgba(201,168,76,0.5); background: rgba(232,228,240,0.06); }
+    .form-input::placeholder { color: var(--text-dim); font-style: italic; }
+    select.form-input { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a84c' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; background-size: 12px; padding-right: 2.5rem; cursor: pointer; }
+    select.form-input option { background: #0a0812; color: var(--text-primary); }
+    .honeypot { display: none !important; position: absolute; left: -9999px; }
+    .btn-submit { font-family: 'Cinzel', serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--void); background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, #a07830 100%); padding: 1.1rem 3rem; border: none; cursor: pointer; width: 100%; margin-top: 0.5rem; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 0 20px rgba(201,168,76,0.15); }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(201,168,76,0.35); }
+    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .form-status { margin-top: 1.5rem; padding: 1.2rem; font-family: 'Raleway', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; display: none; }
+    .form-status.success { display: block; background: rgba(74,45,143,0.2); border: 1px solid rgba(74,45,143,0.5); color: var(--text-primary); }
+    .form-status.error { display: block; background: rgba(139,32,32,0.15); border: 1px solid rgba(139,32,32,0.4); color: #e8a4a4; }
+    footer { position: relative; z-index: 1; border-top: 1px solid rgba(201,168,76,0.1); padding: 3rem 2rem; text-align: center; }
+    .footer-brand { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.25em; color: var(--gold); margin-bottom: 1rem; }
+    .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; }
+    .footer-links a { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.15em; color: var(--text-dim); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 300; letter-spacing: 0.08em; color: var(--text-dim); line-height: 1.7; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @media (max-width: 768px) { nav { padding: 1.2rem 1.5rem; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-brand">White Flame Legacy</a>
+    <a href="index.html" class="nav-back">← Return</a>
+  </nav>
+  <section class="hero">
+    <span class="hero-overline">Contact &amp; Logistics</span>
+    <h1 class="hero-title"><span>Book &amp; Connect</span></h1>
+    <div class="hero-divider"></div>
+  </section>
+  <main class="page-content">
+    <span class="section-label">Send an Enquiry</span>
+    <p class="intro-text">Use this form for general enquiries, logistics questions, or anything that doesn't fit the booking calendars. For session bookings, use the booking pages directly.</p>
+    <form id="contactForm" onsubmit="submitEnquiry(event)">
+      <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off">
+      <div class="form-group">
+        <label class="form-label" for="cSubject">Subject</label>
+        <select class="form-input" id="cSubject" name="subject" required>
+          <option value="" disabled selected>Select a subject</option>
+          <option value="general">General Enquiry</option>
+          <option value="qsr">Quantum Soul Recalibration — Question</option>
+          <option value="circles">Quantum Activation Circles — Question</option>
+          <option value="corporate">Corporate / Group Facilitation</option>
+          <option value="ancestral">Ancestral Web — Waitlist Question</option>
+          <option value="media">Media &amp; Press</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cName">Full Name</label>
+        <input class="form-input" type="text" id="cName" name="name" required placeholder="Your full name">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cEmail">Email Address</label>
+        <input class="form-input" type="email" id="cEmail" name="email" required placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cPhone">Phone Number (Optional)</label>
+        <input class="form-input" type="tel" id="cPhone" name="phone" placeholder="+1 (000) 000-0000">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cMessage">Message</label>
+        <textarea class="form-input" id="cMessage" name="message" rows="5" required placeholder="Your enquiry"></textarea>
+      </div>
+      <button type="submit" class="btn-submit" id="submitBtn">Send Enquiry</button>
+    </form>
+    <div class="form-status" id="formStatus"></div>
+  </main>
+  <footer>
+    <div class="footer-brand">White Flame Legacy</div>
+    <nav class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </nav>
+    <p class="footer-copy">&copy; 2025 White Flame Legacy. All Rights Reserved.<br>All content is the intellectual property of White Flame Legacy and Kalista.<br>Unauthorized reproduction is strictly prohibited.</p>
+  </footer>
+  <script>
+    async function submitEnquiry(e) {
+      e.preventDefault();
+      if (document.querySelector('.honeypot').value) return;
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true; btn.textContent = 'Sending...';
+      const status = document.getElementById('formStatus');
+      status.className = 'form-status';
+      const payload = {
+        type: 'enquiry',
+        subject: document.getElementById('cSubject').value,
+        name: document.getElementById('cName').value.trim(),
+        email: document.getElementById('cEmail').value.trim(),
+        phone: document.getElementById('cPhone').value.trim(),
+        message: document.getElementById('cMessage').value.trim()
+      };
+      try {
+        const r = await fetch('https://api.github.com/repos/whiteflamelegacy/white-flame-legacy/dispatches', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token GITHUB_TOKEN_PLACEHOLDER' },
+          body: JSON.stringify({ event_type: 'enquiry', client_payload: payload })
+        });
+        if (r.status === 204 || r.ok) {
+          document.getElementById('contactForm').style.display = 'none';
+          status.className = 'form-status success';
+          status.textContent = 'Enquiry received. Kalista will be in touch with you directly.';
+        } else throw new Error('Error ' + r.status);
+      } catch(err) {
+        status.className = 'form-status error';
+        status.innerHTML = 'Technical issue. Please email <strong>kalistawhiteflame@gmail.com</strong> directly with your enquiry.';
+        btn.disabled = false; btn.textContent = 'Send Enquiry';
+      }
+    }
+  </script>
+</body>
+</html>
