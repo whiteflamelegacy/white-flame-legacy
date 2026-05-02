@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quantum Activation Circles — White Flame Legacy</title>
+  <title>Quantum Activation Circles â White Flame Legacy</title>
   <meta name="description" content="Group sessions. A 75-minute high-frequency containment field. Structural extraction, not temporary relief. $88 per person.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,7 +97,7 @@
 <body>
   <nav>
     <a href="index.html" class="nav-brand">White Flame Legacy</a>
-    <a href="index.html" class="nav-back">← Return</a>
+    <a href="index.html" class="nav-back">â Return</a>
   </nav>
   <section class="hero">
     <span class="hero-overline">Group Sessions</span>
@@ -107,14 +107,14 @@
   </section>
   <main class="page-content">
     <div class="approved-copy">
-      <p>Have you noticed that the “Love and Light” systems aren’t actually providing the clearing you’re seeking? You’ve done the meditations, you’ve sat in the circles, and you’ve raised your vibration—but has the baseline of your life actually changed? Or do you still feel that heavy, familiar drag in your biology that feels like it doesn’t even belong to you?</p>
-      <p>If you are tired of temporary relief and are looking for structural change, this is why the Circle exists. This isn’t a space for “coping” with your baggage; it’s a space for extracting it.</p>
+      <p>Have you noticed that the âLove and Lightâ systems arenât actually providing the clearing youâre seeking? Youâve done the meditations, youâve sat in the circles, and youâve raised your vibrationâbut has the baseline of your life actually changed? Or do you still feel that heavy, familiar drag in your biology that feels like it doesnât even belong to you?</p>
+      <p>If you are tired of temporary relief and are looking for structural change, this is why the Circle exists. This isnât a space for âcopingâ with your baggage; itâs a space for extracting it.</p>
     </div>
     <div class="circle-integrity">
       <h3>The Integrity of the Circle</h3>
       <p>This is a 75-minute high-frequency containment field. It is a surgical environment where we move past the fluff to address the structural integrity of your field.</p>
-      <p>Are you ready to stop managing the “junk code” of your ancestors and start deleting it? Are you ready to see the specific knots in your web and actually unravel them? Are you ready to find out who you are when you aren’t a host for someone else’s trauma?</p>
-      <p>We don’t come here to escape. We come here to track, extract, and anchor your own sovereign frequency back into your physical body.</p>
+      <p>Are you ready to stop managing the âjunk codeâ of your ancestors and start deleting it? Are you ready to see the specific knots in your web and actually unravel them? Are you ready to find out who you are when you arenât a host for someone elseâs trauma?</p>
+      <p>We donât come here to escape. We come here to track, extract, and anchor your own sovereign frequency back into your physical body.</p>
     </div>
     <hr class="gold-rule">
     <span class="section-label">Secure Your Spot</span>
@@ -174,6 +174,7 @@
     <p class="footer-copy">&copy; 2025 White Flame Legacy. All Rights Reserved.<br>All content is the intellectual property of White Flame Legacy and Kalista.<br>Unauthorized reproduction is strictly prohibited.</p>
   </footer>
   <script>
+    const DISPATCH_TOKEN = 'PASTE_YOUR_DISPATCH_TOKEN_HERE';
     const SERVICE = 'quantum_activation_circles';
     const MAX_PER_SLOT = 12;
     let availability = null, currentDate = new Date(), selectedDate = null, selectedSlot = null;
@@ -238,7 +239,7 @@
       if (!entry) return;
       const [y,mo,d] = dateStr.split('-');
       const label = MONTHS[parseInt(mo)-1] + ' ' + parseInt(d) + ', ' + y;
-      document.getElementById('slotsDateLabel').textContent = 'Available times — ' + label;
+      document.getElementById('slotsDateLabel').textContent = 'Available times â ' + label;
       const grid = document.getElementById('slotsGrid');
       grid.innerHTML = entry.slots.filter(s => spotsLeft(s) > 0).map(s => {
         const [h,min] = s.time.split(':');
@@ -281,7 +282,7 @@
       };
       try {
         const r = await fetch('https://api.github.com/repos/whiteflamelegacy/white-flame-legacy/dispatches', {
-          method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token GITHUB_TOKEN_PLACEHOLDER'},
+          method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token ' + DISPATCH_TOKEN},
           body: JSON.stringify({event_type: 'booking', client_payload: payload})
         });
         if (r.status === 204 || r.ok) {
@@ -314,7 +315,7 @@
       };
       try {
         const r = await fetch('https://api.github.com/repos/whiteflamelegacy/white-flame-legacy/dispatches', {
-          method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token GITHUB_TOKEN_PLACEHOLDER'},
+          method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token ' + DISPATCH_TOKEN},
           body: JSON.stringify({event_type: 'corporate_enquiry', client_payload: payload})
         });
         if (r.status === 204 || r.ok) {
