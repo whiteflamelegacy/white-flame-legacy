@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quantum Soul Recalibration — White Flame Legacy</title>
+  <title>Quantum Soul Recalibration â White Flame Legacy</title>
   <meta name="description" content="Private 1-on-1 sessions with Kalista. Structural recalibration at the field level. $180 single session / $250 package.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,7 +45,7 @@
     .price-amount { font-family: 'Cinzel', serif; font-size: 2.2rem; font-weight: 400; color: var(--gold); letter-spacing: 0.05em; display: block; margin-bottom: 0.4rem; }
     .price-label { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.25em; color: var(--text-dim); text-transform: uppercase; }
     hr.gold-rule { border: none; height: 1px; background: linear-gradient(to right, transparent, rgba(201,168,76,0.3), transparent); margin: 4rem 0; }
-    /* ── CALENDAR ── */
+    /* ââ CALENDAR ââ */
     .cal-section { margin-top: 2rem; }
     .cal-wrapper { background: rgba(10,8,18,0.8); border: 1px solid rgba(201,168,76,0.15); padding: 2.5rem; }
     .cal-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
@@ -102,7 +102,7 @@
 <body>
   <nav>
     <a href="index.html" class="nav-brand">White Flame Legacy</a>
-    <a href="index.html" class="nav-back">← Return</a>
+    <a href="index.html" class="nav-back">â Return</a>
   </nav>
   <section class="hero">
     <span class="hero-overline">Private 1-on-1</span>
@@ -113,13 +113,13 @@
   <main class="page-content">
     <span class="section-label">The Work</span>
     <h2 class="section-heading">What Happens in a Session</h2>
-    <p>This is not a coaching call. It is not a reading. It is a precision intervention into the structural integrity of your field — conducted in real time, with clinical focus on the specific code running beneath your patterns.</p>
+    <p>This is not a coaching call. It is not a reading. It is a precision intervention into the structural integrity of your field â conducted in real time, with clinical focus on the specific code running beneath your patterns.</p>
     <p>Each session is 60 minutes. You arrive with whatever is present. We locate, isolate, and extract what doesn't belong to you. You leave with your baseline measurably different from when you arrived.</p>
 
     <div class="phases">
       <div class="phase" data-num="Phase I">
         <h3>Field Assessment</h3>
-        <p>We map the current state of your operating system. Not through what you tell me — through what I can read in the field. What is running, where it originated, how deeply it is embedded.</p>
+        <p>We map the current state of your operating system. Not through what you tell me â through what I can read in the field. What is running, where it originated, how deeply it is embedded.</p>
       </div>
       <div class="phase" data-num="Phase II">
         <h3>Code Identification</h3>
@@ -131,7 +131,7 @@
       </div>
       <div class="phase" data-num="Phase IV">
         <h3>Frequency Anchoring</h3>
-        <p>Your sovereign frequency is anchored back into your physical body. This is the recalibration. The system is reset to your actual baseline — not a healed version of your old self. You.</p>
+        <p>Your sovereign frequency is anchored back into your physical body. This is the recalibration. The system is reset to your actual baseline â not a healed version of your old self. You.</p>
       </div>
     </div>
 
@@ -203,6 +203,7 @@
   </footer>
 
   <script>
+    const DISPATCH_TOKEN = 'PASTE_YOUR_DISPATCH_TOKEN_HERE';
     const SERVICE = 'quantum_soul_recalibration';
     let availability = null;
     let currentDate = new Date();
@@ -284,7 +285,7 @@
       if (!entry) return;
       const [y,mo,d] = dateStr.split('-');
       const label = MONTHS[parseInt(mo)-1] + ' ' + parseInt(d) + ', ' + y;
-      document.getElementById('slotsDateLabel').textContent = 'Available times — ' + label;
+      document.getElementById('slotsDateLabel').textContent = 'Available times â ' + label;
       const grid = document.getElementById('slotsGrid');
       grid.innerHTML = entry.slots.filter(s => !s.booked).map(s => {
         const [h,min] = s.time.split(':');
@@ -330,7 +331,7 @@
       try {
         const r = await fetch('https://api.github.com/repos/whiteflamelegacy/white-flame-legacy/dispatches', {
           method: 'POST',
-          headers: {'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token GITHUB_TOKEN_PLACEHOLDER'},
+          headers: {'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token ' + DISPATCH_TOKEN},
           body: JSON.stringify({event_type: 'booking', client_payload: payload})
         });
         if (r.status === 204 || r.ok) {
