@@ -427,7 +427,8 @@ footer{
     <h3 class="cs-title" id="cs-title">Coming Soon</h3>
     <p class="cs-body" id="cs-body">This portal is being prepared. Enter your details to be notified the moment it opens.</p>
     <button class="btn-p" style="margin-bottom:0" onclick="closeCS();openPopup()">Notify Me</button>
-  </div>
+  
+    <a id="cs-enter" class="btn-p" href="#" style="display:none;margin-top:1.2rem;text-align:center;text-decoration:none">Enter</a></div>
 </div>
 
 <!-- NAV -->
@@ -547,7 +548,7 @@ footer{
       </g>
 
       <!-- NODE 2: TOP-RIGHT — Epigenetic Source Code Recalibrations -->
-      <g class="node-group" onclick="openCS('Epigenetic Source Code Recalibrations','Our signature work. Quantum biofield sessions that locate inherited programming at the cellular level and systematically rewrite the ancestral code.')">
+      <g class="node-group" onclick="openCS('Epigenetic Source Code Recalibrations','Our signature work. Quantum biofield sessions that locate inherited programming at the cellular level and systematically rewrite the ancestral code.','quantum-soul-recalibration.html')">
         <circle class="node-circle" cx="580" cy="232" r="56" fill="rgba(10,6,30,0.95)" stroke="rgba(133,83,184,0.5)" stroke-width="1"/>
         <circle cx="580" cy="232" r="42" fill="rgba(15,10,36,0.9)" stroke="rgba(133,83,184,0.3)" stroke-width="0.75"/>
         <circle cx="580" cy="232" r="5" class="node-dot"/>
@@ -584,7 +585,7 @@ footer{
       </g>
 
       <!-- NODE 6: BOTTOM-LEFT — Ancestral Web -->
-      <g class="node-group" onclick="openCS('Unravelling the Ancestral Web','Deep-dive sessions mapping and healing the multi-generational web — understanding the threads so they may be consciously dissolved and transformed.')">
+      <g class="node-group" onclick="openCS('Unravelling the Ancestral Web','Deep-dive sessions mapping and healing the multi-generational web — understanding the threads so they may be consciously dissolved and transformed.','ancestral-web.html')">
         <circle class="node-circle" cx="220" cy="568" r="52" fill="rgba(10,6,30,0.95)" stroke="rgba(133,83,184,0.5)" stroke-width="1"/>
         <circle cx="220" cy="568" r="38" fill="rgba(15,10,36,0.9)" stroke="rgba(133,83,184,0.3)" stroke-width="0.75"/>
         <circle cx="220" cy="568" r="5" class="node-dot"/>
@@ -641,10 +642,11 @@ footer{
 <script>
 function openPopup(){document.getElementById('popup').classList.add('on')}
 function closePopup(){document.getElementById('popup').classList.remove('on')}
-function openCS(title,body){
+function openCS(title,body,url){
   document.getElementById('cs-title').textContent=title;
   document.getElementById('cs-body').textContent=body;
   document.getElementById('csmodal').classList.add('on');
+    var btn=document.getElementById('cs-enter');if(btn){btn.href=url||'#';btn.style.display=url?'inline-block':'none';}
 }
 function closeCS(){document.getElementById('csmodal').classList.remove('on')}
 
@@ -673,4 +675,4 @@ document.body.appendChild(cg);
 document.addEventListener('mousemove',function(e){cg.style.left=e.clientX+'px';cg.style.top=e.clientY+'px'});
 </script>
 </body>
-</html>
+        </html>
