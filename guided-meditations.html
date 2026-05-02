@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guided Meditations — White Flame Legacy</title>
+  <title>Guided Meditations â White Flame Legacy</title>
   <meta name="description" content="Coming soon. Join the waitlist to be notified when Guided Meditations opens.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,13 +53,13 @@
 <body>
   <nav>
     <a href="index.html" class="nav-brand">White Flame Legacy</a>
-    <a href="index.html" class="nav-back">← Return</a>
+    <a href="index.html" class="nav-back">â Return</a>
   </nav>
   <section class="hero">
     <span class="coming-badge">Coming Soon</span>
     <h1 class="hero-title"><span>Guided<br>Meditations</span></h1>
     <div class="hero-divider"></div>
-    <p class="tagline">Precision-built audio for field-level work. Not background noise — active recalibration tools. Join the waitlist to be notified when access opens.</p>
+    <p class="tagline">Precision-built audio for field-level work. Not background noise â active recalibration tools. Join the waitlist to be notified when access opens.</p>
     <div class="waitlist-form">
       <form id="waitlistForm" onsubmit="joinWaitlist(event)">
         <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off">
@@ -85,6 +85,7 @@
     <p class="footer-copy">&copy; 2025 White Flame Legacy. All Rights Reserved.<br>All content is the intellectual property of White Flame Legacy and Kalista.<br>Unauthorized reproduction is strictly prohibited.</p>
   </footer>
   <script>
+    const DISPATCH_TOKEN = 'PASTE_YOUR_DISPATCH_TOKEN_HERE';
     async function joinWaitlist(e) {
       e.preventDefault();
       if (document.querySelector('.honeypot').value) return;
@@ -99,7 +100,7 @@
       try {
         const r = await fetch('https://api.github.com/repos/whiteflamelegacy/white-flame-legacy/dispatches', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token GITHUB_TOKEN_PLACEHOLDER' },
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token ' + DISPATCH_TOKEN },
           body: JSON.stringify({ event_type: 'waitlist', client_payload: payload })
         });
         if (r.status === 204 || r.ok) {
