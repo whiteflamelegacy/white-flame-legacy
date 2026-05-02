@@ -385,7 +385,13 @@ footer{
   .popup{padding:2.5rem 1.8rem}
   .cs-box{padding:2.5rem 1.8rem}
 }
-</style>
+
+    .orb-pulse{animation:orbPulse 3.5s ease-in-out infinite alternate;}
+    .node-group:hover .orb-pulse{fill:url(#orbGradHov);filter:url(#glowGold);}
+    .node-group:hover .orb-dot{fill:rgba(201,168,76,0.95);}
+    @keyframes orbPulse{0%{r:26;opacity:0.75;}100%{r:30;opacity:1;}}
+    .node-group{transition:all 0.3s;}
+  </style>
 </head>
 <body>
 
@@ -471,146 +477,47 @@ footer{
   <span class="web-label reveal">The field directory</span>
   <h2 class="web-heading reveal">Choose Your Portal</h2>
   <div class="web-container reveal">
-    <svg class="web-svg" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+    <svg class="web-svg" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;height:auto">
       <defs>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-          <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <radialGradient id="centerGrad" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="rgba(85,53,184,0.6)"/>
-          <stop offset="100%" stop-color="rgba(29,16,72,0.3)"/>
-        </radialGradient>
-      </defs>
-
-      <!-- OUTER RING GEOMETRY -->
-      <circle cx="400" cy="400" r="280" fill="none" stroke="rgba(85,53,184,0.08)" stroke-width="1"/>
-      <circle cx="400" cy="400" r="200" fill="none" stroke="rgba(85,53,184,0.1)" stroke-width="1"/>
-      <circle cx="400" cy="400" r="120" fill="none" stroke="rgba(85,53,184,0.15)" stroke-width="1"/>
-      <circle cx="400" cy="400" r="55" fill="none" stroke="rgba(133,83,184,0.3)" stroke-width="1"/>
-
-      <!-- SACRED GEOMETRY LINES - Flower of Life pattern -->
-      <!-- Horizontal axis -->
-      <line class="web-line" x1="120" y1="400" x2="680" y2="400"/>
-      <!-- Diagonal axes -->
-      <line class="web-line" x1="192" y1="192" x2="608" y2="608"/>
-      <line class="web-line" x1="608" y1="192" x2="192" y2="608"/>
-      <!-- Vertical axis -->
-      <line class="web-line" x1="400" y1="120" x2="400" y2="680"/>
-
-      <!-- SPOKES TO NODES -->
-      <!-- Top: Ancestral Recalibration -->
-      <line class="web-line-bright" x1="400" y1="345" x2="400" y2="220"/>
-      <!-- Top-Right: Epigenetic Source Code -->
-      <line class="web-line-bright" x1="447" y1="360" x2="570" y2="250"/>
-      <!-- Right: Personal Clearings -->
-      <line class="web-line-bright" x1="455" y1="400" x2="580" y2="400"/>
-      <!-- Bottom-Right: House Clearings -->
-      <line class="web-line-bright" x1="447" y1="440" x2="570" y2="550"/>
-      <!-- Bottom: Meditations -->
-      <line class="web-line-bright" x1="400" y1="455" x2="400" y2="580"/>
-      <!-- Bottom-Left: Ancestral Web -->
-      <line class="web-line-bright" x1="353" y1="440" x2="230" y2="550"/>
-      <!-- Left: About -->
-      <line class="web-line-bright" x1="345" y1="400" x2="220" y2="400"/>
-      <!-- Top-Left: Connect -->
-      <line class="web-line-bright" x1="353" y1="360" x2="230" y2="250"/>
-
-      <!-- CROSS CONNECTIONS between nodes -->
-      <line class="web-line" x1="400" y1="200" x2="578" y2="238"/>
-      <line class="web-line" x1="578" y1="238" x2="590" y2="400"/>
-      <line class="web-line" x1="590" y1="400" x2="578" y2="562"/>
-      <line class="web-line" x1="578" y1="562" x2="400" y2="600"/>
-      <line class="web-line" x1="400" y1="600" x2="222" y2="562"/>
-      <line class="web-line" x1="222" y1="562" x2="210" y2="400"/>
-      <line class="web-line" x1="210" y1="400" x2="222" y2="238"/>
-      <line class="web-line" x1="222" y1="238" x2="400" y2="200"/>
-
-      <!-- PULSE RINGS ON CENTER -->
-      <circle class="pulse-ring" cx="400" cy="400" r="52"/>
-      <circle class="pulse-ring-2" cx="400" cy="400" r="52"/>
-
-      <!-- CENTER NODE -->
-      <circle cx="400" cy="400" r="52" fill="url(#centerGrad)" stroke="rgba(133,83,184,0.5)" stroke-width="1"/>
-      <circle cx="400" cy="400" r="38" fill="rgba(45,24,112,0.5)" stroke="rgba(184,157,232,0.4)" stroke-width="1"/>
-      <circle cx="400" cy="400" r="8" fill="rgba(184,157,232,0.9)"/>
-      <text class="center-label" x="400" y="395">WHITE</text>
-      <text class="center-label" x="400" y="412">FLAME</text>
-      <text class="center-sub" x="400" y="428">LEGACY</text>
-
-      <!-- NODE 1: TOP — Ancestral Recalibration -->
-      <g class="node-group" onclick="openCS('Ancestral Recalibration','A sacred process of identifying, honouring and dissolving inherited patterns held within your lineage — restoring wholeness at the root of the code.')">
-        <circle class="node-circle" cx="400" cy="190" r="52" fill="rgba(10,6,30,0.95)" stroke="rgba(133,83,184,0.5)" stroke-width="1"/>
-        <circle cx="400" cy="190" r="38" fill="rgba(15,10,36,0.9)" stroke="rgba(133,83,184,0.3)" stroke-width="0.75"/>
-        <circle cx="400" cy="190" r="5" class="node-dot"/>
-        <text class="node-label" x="400" y="185">Ancestral</text>
-        <text class="node-label" x="400" y="199">Recalibration</text>
-      </g>
-
-      <!-- NODE 2: TOP-RIGHT — Epigenetic Source Code Recalibrations -->
-      <g class="node-group" onclick="openCS('Epigenetic Source Code Recalibrations','Our signature work. Quantum biofield sessions that locate inherited programming at the cellular level and systematically rewrite the ancestral code.','quantum-soul-recalibration.html')">
-        <circle class="node-circle" cx="580" cy="232" r="56" fill="rgba(10,6,30,0.95)" stroke="rgba(133,83,184,0.5)" stroke-width="1"/>
-        <circle cx="580" cy="232" r="42" fill="rgba(15,10,36,0.9)" stroke="rgba(133,83,184,0.3)" stroke-width="0.75"/>
-        <circle cx="580" cy="232" r="5" class="node-dot"/>
-        <text class="node-label" x="580" y="222">Epigenetic</text>
-        <text class="node-label" x="580" y="236">Source Code</text>
-        <text class="node-label" x="580" y="250">Recalibrations</text>
-      </g>
-
-      <!-- NODE 3: RIGHT — Personal Clearings -->
-      <g class="node-group" onclick="openCS('Personal Clearings','Energy clearing sessions tailored specifically to you — removing stagnant, foreign or inherited energies that obscure your authentic path and power.')">
-        <circle class="node-circle" cx="596" cy="400" r="52" fill="rgba(10,6,30,0.95)" stroke="rgba(133,83,184,0.5)" stroke-width="1"/>
-        <circle cx="596" cy="400" r="38" fill="rgba(15,10,36,0.9)" stroke="rgba(133,83,184,0.3)" stroke-width="0.75"/>
-        <circle cx="596" cy="400" r="5" class="node-dot"/>
-        <text class="node-label" x="596" y="395">Personal</text>
-        <text class="node-label" x="596" y="409">Clearings</text>
-      </g>
-
-      <!-- NODE 4: BOTTOM-RIGHT — House Clearings -->
-      <g class="node-group" onclick="openCS('House Clearings','Clearing and recalibrating the energetic signature of your home — releasing residual energies, restoring peace and anchoring sacred space.')">
-        <circle class="node-circle" cx="580" cy="568" r="52" fill="rgba(10,6,30,0.95)" stroke="rgba(133,83,184,0.5)" stroke-width="1"/>
-        <circle cx="580" cy="568" r="38" fill="rgba(15,10,36,0.9)" stroke="rgba(133,83,184,0.3)" stroke-width="0.75"/>
-        <circle cx="580" cy="568" r="5" class="node-dot"/>
-        <text class="node-label" x="580" y="563">House</text>
-        <text class="node-label" x="580" y="577">Clearings</text>
-      </g>
-
-      <!-- NODE 5: BOTTOM — Meditations -->
-      <g class="node-group" onclick="openCS('Guided Meditations','Purchasable audio journeys into the ancestral field — crafted to carry you into the quantum biofield for healing, activation and deep cellular recalibration.')">
-        <circle class="node-circle" cx="400" cy="610" r="52" fill="rgba(10,6,30,0.95)" stroke="rgba(133,83,184,0.5)" stroke-width="1"/>
-        <circle cx="400" cy="610" r="38" fill="rgba(15,10,36,0.9)" stroke="rgba(133,83,184,0.3)" stroke-width="0.75"/>
-        <circle cx="400" cy="610" r="5" class="node-dot"/>
-        <text class="node-label" x="400" y="605">Guided</text>
-        <text class="node-label" x="400" y="619">Meditations</text>
-      </g>
-
-      <!-- NODE 6: BOTTOM-LEFT — Ancestral Web -->
-      <g class="node-group" onclick="openCS('Unravelling the Ancestral Web','Deep-dive sessions mapping and healing the multi-generational web — understanding the threads so they may be consciously dissolved and transformed.','ancestral-web.html')">
-        <circle class="node-circle" cx="220" cy="568" r="52" fill="rgba(10,6,30,0.95)" stroke="rgba(133,83,184,0.5)" stroke-width="1"/>
-        <circle cx="220" cy="568" r="38" fill="rgba(15,10,36,0.9)" stroke="rgba(133,83,184,0.3)" stroke-width="0.75"/>
-        <circle cx="220" cy="568" r="5" class="node-dot"/>
-        <text class="node-label" x="220" y="558">Ancestral</text>
-        <text class="node-label" x="220" y="572">Web</text>
-        <text class="node-label" x="220" y="586">Unravelling</text>
-      </g>
-
-      <!-- NODE 7: LEFT — About -->
-      <g class="node-group" onclick="openCS('About the White Flame','The story behind the legacy — the science, the calling, and the practitioner who carries the flame forward.')">
-        <circle class="node-circle" cx="204" cy="400" r="52" fill="rgba(10,6,30,0.95)" stroke="rgba(133,83,184,0.5)" stroke-width="1"/>
-        <circle cx="204" cy="400" r="38" fill="rgba(15,10,36,0.9)" stroke="rgba(133,83,184,0.3)" stroke-width="0.75"/>
-        <circle cx="204" cy="400" r="5" class="node-dot"/>
-        <text class="node-label" x="204" y="395">The</text>
-        <text class="node-label" x="204" y="409">Flame</text>
-      </g>
-
-      <!-- NODE 8: TOP-LEFT — Connect/Book -->
-      <g class="node-group" onclick="openCS('Book &amp; Connect','Ready to begin the recalibration? Book your session, enquire about the circles, or simply reach out. The field is open.')">
-        <circle class="node-circle" cx="220" cy="232" r="52" fill="rgba(10,6,30,0.95)" stroke="rgba(133,83,184,0.5)" stroke-width="1"/>
-        <circle cx="220" cy="232" r="38" fill="rgba(15,10,36,0.9)" stroke="rgba(133,83,184,0.3)" stroke-width="0.75"/>
-        <circle cx="220" cy="232" r="5" class="node-dot"/>
-        <text class="node-label" x="220" y="227">Book &amp;</text>
-        <text class="node-label" x="220" y="241">Connect</text>
-      </g>
+  <filter id="glow"><feGaussianBlur stdDeviation="4" result="cb"/><feMerge><feMergeNode in="cb"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="glowGold"><feGaussianBlur stdDeviation="6" result="cb"/><feMerge><feMergeNode in="cb"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <radialGradient id="orbGrad" cx="40%" cy="35%" r="60%"><stop offset="0%" stop-color="rgba(120,80,200,0.95)"/><stop offset="100%" stop-color="rgba(45,20,90,0.85)"/></radialGradient>
+  <radialGradient id="orbGradHov" cx="40%" cy="35%" r="60%"><stop offset="0%" stop-color="rgba(201,168,76,0.95)"/><stop offset="100%" stop-color="rgba(120,80,20,0.85)"/></radialGradient>
+</defs>
+      <line x1="400" y1="400" x2="400.0" y2="70.0" stroke="rgba(220,215,240,0.13)" stroke-width="0.8"/><line x1="400" y1="400" x2="658.0" y2="194.2" stroke="rgba(220,215,240,0.13)" stroke-width="0.8"/><line x1="400" y1="400" x2="721.7" y2="473.4" stroke="rgba(220,215,240,0.13)" stroke-width="0.8"/><line x1="400" y1="400" x2="543.2" y2="697.3" stroke="rgba(220,215,240,0.13)" stroke-width="0.8"/><line x1="400" y1="400" x2="256.8" y2="697.3" stroke="rgba(220,215,240,0.13)" stroke-width="0.8"/><line x1="400" y1="400" x2="78.3" y2="473.4" stroke="rgba(220,215,240,0.13)" stroke-width="0.8"/><line x1="400" y1="400" x2="142.0" y2="194.2" stroke="rgba(220,215,240,0.13)" stroke-width="0.8"/>
+      <path d="M400.0,280.0 L493.8,325.2 L517.0,426.7 L452.1,508.1 L347.9,508.1 L283.0,426.7 L306.2,325.2 L400.0,280.0 Z" fill="none" stroke="rgba(220,215,240,0.09)" stroke-width="0.7"/><path d="M400.0,180.0 L572.0,262.8 L614.5,449.0 L495.5,598.2 L304.5,598.2 L185.5,449.0 L228.0,262.8 L400.0,180.0 Z" fill="none" stroke="rgba(220,215,240,0.09)" stroke-width="0.7"/><path d="M400.0,90.0 L642.4,206.7 L702.2,469.0 L534.5,679.3 L265.5,679.3 L97.8,469.0 L157.6,206.7 L400.0,90.0 Z" fill="none" stroke="rgba(220,215,240,0.09)" stroke-width="0.7"/>
+      <line x1="400.0" y1="280.0" x2="572.0" y2="262.8" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="493.8" y1="325.2" x2="614.5" y2="449.0" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="517.0" y1="426.7" x2="495.5" y2="598.2" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="452.1" y1="508.1" x2="304.5" y2="598.2" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="347.9" y1="508.1" x2="185.5" y2="449.0" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="283.0" y1="426.7" x2="228.0" y2="262.8" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="306.2" y1="325.2" x2="400.0" y2="180.0" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="400.0" y1="180.0" x2="642.4" y2="206.7" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="572.0" y1="262.8" x2="702.2" y2="469.0" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="614.5" y1="449.0" x2="534.5" y2="679.3" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="495.5" y1="598.2" x2="265.5" y2="679.3" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="304.5" y1="598.2" x2="97.8" y2="469.0" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="185.5" y1="449.0" x2="157.6" y2="206.7" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="228.0" y1="262.8" x2="400.0" y2="90.0" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="400.0" y1="90.0" x2="642.4" y2="206.7" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="642.4" y1="206.7" x2="702.2" y2="469.0" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="702.2" y1="469.0" x2="534.5" y2="679.3" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="534.5" y1="679.3" x2="265.5" y2="679.3" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="265.5" y1="679.3" x2="97.8" y2="469.0" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="97.8" y1="469.0" x2="157.6" y2="206.7" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/><line x1="157.6" y1="206.7" x2="400.0" y2="90.0" stroke="rgba(220,215,240,0.055)" stroke-width="0.5"/>
+      <g class="node-group" onclick="openCS('Quantum Soul Recalibration','Quantum Soul Recalibration','quantum-soul-recalibration.html')" style="cursor:pointer" data-url="quantum-soul-recalibration.html">
+    <circle cx="400.0" cy="90.0" r="28" fill="url(#orbGrad)" filter="url(#glow)" class="orb-pulse" style="animation-delay:0.0s"/>
+    <circle cx="400.0" cy="90.0" r="22" fill="url(#orbGrad)" opacity="0.7"/>
+    <circle cx="400.0" cy="90.0" r="4" fill="rgba(184,157,232,0.9)" class="orb-dot"/>
+  </g><g class="node-group" onclick="openCS('Quantum Activation Circles','Quantum Activation Circles','quantum-activation-circles.html')" style="cursor:pointer" data-url="quantum-activation-circles.html">
+    <circle cx="642.4" cy="206.7" r="28" fill="url(#orbGrad)" filter="url(#glow)" class="orb-pulse" style="animation-delay:0.6s"/>
+    <circle cx="642.4" cy="206.7" r="22" fill="url(#orbGrad)" opacity="0.7"/>
+    <circle cx="642.4" cy="206.7" r="4" fill="rgba(184,157,232,0.9)" class="orb-dot"/>
+  </g><g class="node-group" onclick="openCS('The Flame','The Flame','the-flame.html')" style="cursor:pointer" data-url="the-flame.html">
+    <circle cx="702.2" cy="469.0" r="28" fill="url(#orbGrad)" filter="url(#glow)" class="orb-pulse" style="animation-delay:1.2s"/>
+    <circle cx="702.2" cy="469.0" r="22" fill="url(#orbGrad)" opacity="0.7"/>
+    <circle cx="702.2" cy="469.0" r="4" fill="rgba(184,157,232,0.9)" class="orb-dot"/>
+  </g><g class="node-group" onclick="openCS('Ancestral Web','Ancestral Web','ancestral-web.html')" style="cursor:pointer" data-url="ancestral-web.html">
+    <circle cx="534.5" cy="679.3" r="28" fill="url(#orbGrad)" filter="url(#glow)" class="orb-pulse" style="animation-delay:1.8s"/>
+    <circle cx="534.5" cy="679.3" r="22" fill="url(#orbGrad)" opacity="0.7"/>
+    <circle cx="534.5" cy="679.3" r="4" fill="rgba(184,157,232,0.9)" class="orb-dot"/>
+  </g><g class="node-group" onclick="openCS('Guided Meditations','Guided Meditations','guided-meditations.html')" style="cursor:pointer" data-url="guided-meditations.html">
+    <circle cx="265.5" cy="679.3" r="28" fill="url(#orbGrad)" filter="url(#glow)" class="orb-pulse" style="animation-delay:2.4s"/>
+    <circle cx="265.5" cy="679.3" r="22" fill="url(#orbGrad)" opacity="0.7"/>
+    <circle cx="265.5" cy="679.3" r="4" fill="rgba(184,157,232,0.9)" class="orb-dot"/>
+  </g><g class="node-group" onclick="openCS('Book & Connect','Book & Connect','book-connect.html')" style="cursor:pointer" data-url="book-connect.html">
+    <circle cx="97.8" cy="469.0" r="28" fill="url(#orbGrad)" filter="url(#glow)" class="orb-pulse" style="animation-delay:3.0s"/>
+    <circle cx="97.8" cy="469.0" r="22" fill="url(#orbGrad)" opacity="0.7"/>
+    <circle cx="97.8" cy="469.0" r="4" fill="rgba(184,157,232,0.9)" class="orb-dot"/>
+  </g><g class="node-group" onclick="openCS('The Field','The Field','the-field.html')" style="cursor:pointer" data-url="the-field.html">
+    <circle cx="157.6" cy="206.7" r="28" fill="url(#orbGrad)" filter="url(#glow)" class="orb-pulse" style="animation-delay:3.6s"/>
+    <circle cx="157.6" cy="206.7" r="22" fill="url(#orbGrad)" opacity="0.7"/>
+    <circle cx="157.6" cy="206.7" r="4" fill="rgba(184,157,232,0.9)" class="orb-dot"/>
+  </g>
+      <circle cx="400" cy="400" r="5" fill="rgba(184,157,232,0.4)"/>
+<circle cx="400" cy="400" r="2" fill="rgba(220,215,240,0.7)"/>
     </svg>
   </div>
   <p class="reveal" style="font-family:Inter,sans-serif;font-size:0.68rem;font-weight:200;letter-spacing:0.2em;color:var(--silver-dim);margin-top:2rem;text-transform:uppercase">Select a node to enter that field</p>
