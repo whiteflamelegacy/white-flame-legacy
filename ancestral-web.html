@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ancestral Web — White Flame Legacy</title>
+  <title>Ancestral Web â White Flame Legacy</title>
   <meta name="description" content="Level 1 opens June 15th. Join the waitlist. $333/month or $888 outright.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,7 +55,7 @@
 <body>
   <nav>
     <a href="index.html" class="nav-brand">White Flame Legacy</a>
-    <a href="index.html" class="nav-back">← Return</a>
+    <a href="index.html" class="nav-back">â Return</a>
   </nav>
   <section class="hero">
     <span class="coming-badge">Coming Soon</span>
@@ -63,7 +63,7 @@
     <p class="open-date">Level 1 Opens June 15th</p>
     <p class="pricing">$333 / month &nbsp;&bull;&nbsp; $888 Outright</p>
     <div class="hero-divider"></div>
-    <p class="tagline">The lineage work begins here. You cannot delete what you cannot see. The Ancestral Web maps the field of inherited code with surgical precision — and begins the extraction.</p>
+    <p class="tagline">The lineage work begins here. You cannot delete what you cannot see. The Ancestral Web maps the field of inherited code with surgical precision â and begins the extraction.</p>
     <div class="waitlist-form">
       <form id="waitlistForm" onsubmit="joinWaitlist(event)">
         <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off">
@@ -89,6 +89,7 @@
     <p class="footer-copy">&copy; 2025 White Flame Legacy. All Rights Reserved.<br>All content is the intellectual property of White Flame Legacy and Kalista.<br>Unauthorized reproduction is strictly prohibited.</p>
   </footer>
   <script>
+    const DISPATCH_TOKEN = 'PASTE_YOUR_DISPATCH_TOKEN_HERE';
     async function joinWaitlist(e) {
       e.preventDefault();
       if (document.querySelector('.honeypot').value) return;
@@ -102,7 +103,7 @@
       };
       try {
         const r = await fetch('https://api.github.com/repos/whiteflamelegacy/white-flame-legacy/dispatches', {
-          method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token GITHUB_TOKEN_PLACEHOLDER'},
+          method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token ' + DISPATCH_TOKEN},
           body: JSON.stringify({event_type: 'waitlist', client_payload: payload})
         });
         if (r.status === 204 || r.ok) {
