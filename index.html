@@ -479,123 +479,100 @@ footer{
 </section>
 
 <!-- AKASHIC WEB -->
-      <section class="web-section" id="web">
-        <span class="web-label">The field directory</span>
-        <h2 class="web-heading">Choose Your Portal</h2>
-        <div class="web-container">
-          <svg class="web-svg" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+      <section class="web-section" id="web" style="opacity:1;transform:none">
+        <span class="web-label" style="opacity:1;transform:none">The field directory</span>
+        <h2 class="web-heading" style="opacity:1;transform:none">Choose Your Portal</h2>
+        <div class="web-container" style="opacity:1;transform:none;display:flex;justify-content:center;width:100%;padding:2rem 1rem">
+          <svg class="web-svg" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:min(800px,94vw);height:auto;overflow:visible">
             <defs>
-              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
-                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
               <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
-                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
-              <radialGradient id="nodeGrad" cx="38%" cy="32%" r="65%">
-                <stop offset="0%" stop-color="rgba(130,90,210,1)"/>
-                <stop offset="100%" stop-color="rgba(35,16,80,1)"/>
+              <radialGradient id="orbGrad" cx="38%" cy="32%" r="65%">
+                <stop offset="0%" stop-color="rgba(120,85,215,1)"/>
+                <stop offset="100%" stop-color="rgba(30,14,75,1)"/>
               </radialGradient>
-              <radialGradient id="nodeGradHov" cx="38%" cy="32%" r="65%">
+              <radialGradient id="orbGradGold" cx="38%" cy="32%" r="65%">
                 <stop offset="0%" stop-color="rgba(232,200,100,1)"/>
-                <stop offset="100%" stop-color="rgba(140,95,20,1)"/>
-              </radialGradient>
-              <radialGradient id="centerGrad" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="rgba(100,70,180,0.5)"/>
-                <stop offset="100%" stop-color="rgba(30,14,70,0.2)"/>
+                <stop offset="100%" stop-color="rgba(140,90,20,1)"/>
               </radialGradient>
             </defs>
-
-            <!-- SPOKES: center(400,400) to outer ring -->
-            <line x1="400" y1="400" x2="400" y2="88" stroke="rgba(210,200,240,0.12)" stroke-width="0.9"/>
-            <line x1="400" y1="400" x2="671" y2="244" stroke="rgba(210,200,240,0.12)" stroke-width="0.9"/>
-            <line x1="400" y1="400" x2="671" y2="556" stroke="rgba(210,200,240,0.12)" stroke-width="0.9"/>
-            <line x1="400" y1="400" x2="400" y2="712" stroke="rgba(210,200,240,0.12)" stroke-width="0.9"/>
-            <line x1="400" y1="400" x2="129" y2="556" stroke="rgba(210,200,240,0.12)" stroke-width="0.9"/>
-            <line x1="400" y1="400" x2="129" y2="244" stroke="rgba(210,200,240,0.12)" stroke-width="0.9"/>
-            <line x1="400" y1="400" x2="552" y2="88" stroke="rgba(210,200,240,0.11)" stroke-width="0.8"/>
-
-            <!-- RING 1: r=100 -->
-            <polygon points="400,300 487,350 487,450 400,500 313,450 313,350" fill="none" stroke="rgba(200,190,240,0.07)" stroke-width="0.7"/>
-
-            <!-- RING 2: r=180 -->
-            <polygon points="400,220 556,310 556,490 400,580 244,490 244,310" fill="none" stroke="rgba(200,190,240,0.08)" stroke-width="0.7"/>
-
-            <!-- RING 3: organic web shape connecting nodes r=312 -->
-            <polygon points="400,88 671,244 671,556 400,712 129,556 129,244 552,88" fill="none" stroke="rgba(200,190,240,0.09)" stroke-width="0.8"/>
-
-            <!-- SECONDARY CROSS-THREADS: inner to mid -->
-            <line x1="400" y1="300" x2="487" y2="350" stroke="rgba(210,200,240,0.05)" stroke-width="0.5"/>
-            <line x1="487" y1="350" x2="487" y2="450" stroke="rgba(210,200,240,0.05)" stroke-width="0.5"/>
-            <line x1="400" y1="220" x2="487" y2="350" stroke="rgba(210,200,240,0.045)" stroke-width="0.45"/>
-            <line x1="556" y1="310" x2="487" y2="350" stroke="rgba(210,200,240,0.045)" stroke-width="0.45"/>
-            <line x1="671" y1="244" x2="556" y2="310" stroke="rgba(210,200,240,0.05)" stroke-width="0.5"/>
-            <line x1="556" y1="490" x2="671" y2="556" stroke="rgba(210,200,240,0.05)" stroke-width="0.5"/>
-            <line x1="400" y1="580" x2="400" y2="712" stroke="rgba(210,200,240,0.05)" stroke-width="0.5"/>
-            <line x1="244" y1="490" x2="129" y2="556" stroke="rgba(210,200,240,0.05)" stroke-width="0.5"/>
-            <line x1="244" y1="310" x2="129" y2="244" stroke="rgba(210,200,240,0.05)" stroke-width="0.5"/>
-            <line x1="400" y1="220" x2="244" y2="310" stroke="rgba(210,200,240,0.045)" stroke-width="0.45"/>
-            <!-- mid to outer cross-threads -->
-            <line x1="556" y1="310" x2="671" y2="244" stroke="rgba(210,200,240,0.04)" stroke-width="0.4"/>
-            <line x1="671" y1="244" x2="552" y2="88" stroke="rgba(210,200,240,0.04)" stroke-width="0.4"/>
-            <line x1="671" y1="556" x2="400" y2="712" stroke="rgba(210,200,240,0.04)" stroke-width="0.4"/>
-            <line x1="129" y1="556" x2="400" y2="712" stroke="rgba(210,200,240,0.04)" stroke-width="0.4"/>
-            <line x1="129" y1="244" x2="400" y2="88" stroke="rgba(210,200,240,0.04)" stroke-width="0.4"/>
-            <line x1="129" y1="244" x2="552" y2="88" stroke="rgba(210,200,240,0.035)" stroke-width="0.35"/>
-
-            <!-- CENTER ORIGIN -->
-            <circle cx="400" cy="400" r="6" fill="rgba(180,155,230,0.35)" filter="url(#glow)"/>
-            <circle cx="400" cy="400" r="2.5" fill="rgba(220,210,250,0.8)"/>
-
-            <!-- NODE 1: TOP — Quantum Soul Recalibration (400, 88) -->
-            <g class="node-group" onclick="openCS('Quantum Soul Recalibration','Private 1-on-1 structural recalibration. Locate, isolate, and extract inherited code at the field level.','quantum-soul-recalibration.html')" style="cursor:pointer">
-              <circle cx="400" cy="88" r="36" fill="url(#nodeGrad)" filter="url(#glow)" class="node-orb" style="animation-delay:0s"/>
-              <circle cx="400" cy="88" r="28" fill="url(#nodeGrad)" opacity="0.6"/>
-              <circle cx="400" cy="88" r="4" fill="rgba(184,157,232,0.9)"/>
-            </g>
-
-            <!-- NODE 2: TOP-RIGHT — Quantum Activation Circles (671, 244) -->
-            <g class="node-group" onclick="openCS('Quantum Activation Circles','75-minute high-frequency containment field. Group extraction of ancestral code. Structural change, not temporary relief.','quantum-activation-circles.html')" style="cursor:pointer">
-              <circle cx="671" cy="244" r="36" fill="url(#nodeGrad)" filter="url(#glow)" class="node-orb" style="animation-delay:0.5s"/>
-              <circle cx="671" cy="244" r="28" fill="url(#nodeGrad)" opacity="0.6"/>
-              <circle cx="671" cy="244" r="4" fill="rgba(184,157,232,0.9)"/>
-            </g>
-
-            <!-- NODE 3: BOTTOM-RIGHT — The Flame (671, 556) -->
-            <g class="node-group" onclick="openCS('The Flame','The source code of White Flame Legacy. Kalista\'s authority page — decades of work, the shift, and the reason this exists.','the-flame.html')" style="cursor:pointer">
-              <circle cx="671" cy="556" r="36" fill="url(#nodeGrad)" filter="url(#glow)" class="node-orb" style="animation-delay:1s"/>
-              <circle cx="671" cy="556" r="28" fill="url(#nodeGrad)" opacity="0.6"/>
-              <circle cx="671" cy="556" r="4" fill="rgba(184,157,232,0.9)"/>
-            </g>
-
-            <!-- NODE 4: BOTTOM — Ancestral Web (400, 712) -->
-            <g class="node-group" onclick="openCS('Ancestral Web','Level 1 opens June 15th. Deep-dive mapping of the multi-generational field. Extraction of inherited code at the root.','ancestral-web.html')" style="cursor:pointer">
-              <circle cx="400" cy="712" r="36" fill="url(#nodeGrad)" filter="url(#glow)" class="node-orb" style="animation-delay:1.5s"/>
-              <circle cx="400" cy="712" r="28" fill="url(#nodeGrad)" opacity="0.6"/>
-              <circle cx="400" cy="712" r="4" fill="rgba(184,157,232,0.9)"/>
-            </g>
-
-            <!-- NODE 5: BOTTOM-LEFT — Guided Meditations (129, 556) -->
-            <g class="node-group" onclick="openCS('Guided Meditations','Precision-built audio tools for field-level recalibration. Coming soon — join the waitlist.','guided-meditations.html')" style="cursor:pointer">
-              <circle cx="129" cy="556" r="36" fill="url(#nodeGrad)" filter="url(#glow)" class="node-orb" style="animation-delay:2s"/>
-              <circle cx="129" cy="556" r="28" fill="url(#nodeGrad)" opacity="0.6"/>
-              <circle cx="129" cy="556" r="4" fill="rgba(184,157,232,0.9)"/>
-            </g>
-
-            <!-- NODE 6: TOP-LEFT — Book & Connect (129, 244) -->
-            <g class="node-group" onclick="openCS('Book &amp; Connect','Contact and logistics. Send an enquiry, ask a question, or begin the conversation.','book-connect.html')" style="cursor:pointer">
-              <circle cx="129" cy="244" r="36" fill="url(#nodeGrad)" filter="url(#glow)" class="node-orb" style="animation-delay:2.5s"/>
-              <circle cx="129" cy="244" r="28" fill="url(#nodeGrad)" opacity="0.6"/>
-              <circle cx="129" cy="244" r="4" fill="rgba(184,157,232,0.9)"/>
-            </g>
-
-            <!-- NODE 7: TOP-RIGHT-2 — The Field (552, 88) -->
-            <g class="node-group" onclick="openCS('The Field','The Field is forming. Register your interest and be among the first to know when it opens.','the-field.html')" style="cursor:pointer">
-              <circle cx="552" cy="88" r="36" fill="url(#nodeGrad)" filter="url(#glow)" class="node-orb" style="animation-delay:3s"/>
-              <circle cx="552" cy="88" r="28" fill="url(#nodeGrad)" opacity="0.6"/>
-              <circle cx="552" cy="88" r="4" fill="rgba(184,157,232,0.9)"/>
-            </g>
+            <style>
+              @keyframes nodeAura{0%{r:40;opacity:0.15}100%{r:50;opacity:0.3}}
+              @keyframes nodePulse{0%{r:30;opacity:0.8}100%{r:34;opacity:1}}
+              .portal-node:hover .node-outer{fill:url(#orbGradGold);stroke:rgba(201,168,76,0.9);filter:url(#goldGlow)}
+              .portal-node:hover .node-aura{fill:rgba(201,168,76,0.15)}
+              .portal-node:hover text{fill:rgba(232,200,100,1)}
+            </style>
+            <line x1="400" y1="400" x2="400" y2="87" stroke="rgba(210,200,245,0.14)" stroke-width="0.9"/><line x1="400" y1="400" x2="644.71" y2="204.85" stroke="rgba(210,200,245,0.14)" stroke-width="0.9"/><line x1="400" y1="400" x2="705.15" y2="469.65" stroke="rgba(210,200,245,0.14)" stroke-width="0.9"/><line x1="400" y1="400" x2="535.81" y2="682" stroke="rgba(210,200,245,0.14)" stroke-width="0.9"/><line x1="400" y1="400" x2="264.19" y2="682" stroke="rgba(210,200,245,0.14)" stroke-width="0.9"/><line x1="400" y1="400" x2="94.85" y2="469.65" stroke="rgba(210,200,245,0.14)" stroke-width="0.9"/><line x1="400" y1="400" x2="155.29" y2="204.85" stroke="rgba(210,200,245,0.14)" stroke-width="0.9"/>
+            <path d="M400,300L475.06,340.14L494.57,421.58L441.22,485.59L357.48,488.29L305.43,421.58L324.94,340.14L400,300Z" fill="none" stroke="rgba(210,200,245,0.06)" stroke-width="0.6" stroke-linejoin="round"/><path d="M400,215L541.51,287.15L577.44,440.5L478.1,562.17L320.6,564.88L222.56,440.5L258.49,287.15L400,215Z" fill="none" stroke="rgba(210,200,245,0.08)" stroke-width="0.7" stroke-linejoin="round"/><path d="M400,105L627.51,218.56L684.68,464.98L525.83,661.28L272.87,663.98L115.32,464.98L172.49,218.56L400,105Z" fill="none" stroke="rgba(210,200,245,0.1)" stroke-width="0.8" stroke-linejoin="round"/>
+            <line x1="400" y1="300" x2="544.64" y2="284.65" stroke="rgba(210,200,245,0.055)" stroke-width="0.45"/><line x1="400" y1="215" x2="630.64" y2="216.07" stroke="rgba(210,200,245,0.05)" stroke-width="0.4"/><line x1="478.18" y1="337.65" x2="400" y2="105" stroke="rgba(210,200,245,0.04)" stroke-width="0.35"/><line x1="478.18" y1="337.65" x2="580.36" y2="441.17" stroke="rgba(210,200,245,0.055)" stroke-width="0.45"/><line x1="544.64" y1="284.65" x2="687.6" y2="465.64" stroke="rgba(210,200,245,0.05)" stroke-width="0.4"/><line x1="497.49" y1="422.25" x2="630.64" y2="216.07" stroke="rgba(210,200,245,0.04)" stroke-width="0.35"/><line x1="497.49" y1="422.25" x2="480.27" y2="566.68" stroke="rgba(210,200,245,0.055)" stroke-width="0.45"/><line x1="580.36" y1="441.17" x2="528" y2="665.79" stroke="rgba(210,200,245,0.05)" stroke-width="0.4"/><line x1="443.39" y1="490.1" x2="687.6" y2="465.64" stroke="rgba(210,200,245,0.04)" stroke-width="0.35"/><line x1="443.39" y1="490.1" x2="319.73" y2="566.68" stroke="rgba(210,200,245,0.055)" stroke-width="0.45"/><line x1="480.27" y1="566.68" x2="272" y2="665.79" stroke="rgba(210,200,245,0.05)" stroke-width="0.4"/><line x1="356.61" y1="490.1" x2="528" y2="665.79" stroke="rgba(210,200,245,0.04)" stroke-width="0.35"/><line x1="356.61" y1="490.1" x2="219.64" y2="441.17" stroke="rgba(210,200,245,0.055)" stroke-width="0.45"/><line x1="319.73" y1="566.68" x2="112.4" y2="465.64" stroke="rgba(210,200,245,0.05)" stroke-width="0.4"/><line x1="302.51" y1="422.25" x2="272" y2="665.79" stroke="rgba(210,200,245,0.04)" stroke-width="0.35"/><line x1="302.51" y1="422.25" x2="255.36" y2="284.65" stroke="rgba(210,200,245,0.055)" stroke-width="0.45"/><line x1="219.64" y1="441.17" x2="169.36" y2="216.07" stroke="rgba(210,200,245,0.05)" stroke-width="0.4"/><line x1="321.82" y1="337.65" x2="112.4" y2="465.64" stroke="rgba(210,200,245,0.04)" stroke-width="0.35"/><line x1="321.82" y1="337.65" x2="400" y2="215" stroke="rgba(210,200,245,0.055)" stroke-width="0.45"/><line x1="255.36" y1="284.65" x2="400" y2="105" stroke="rgba(210,200,245,0.05)" stroke-width="0.4"/><line x1="400" y1="300" x2="169.36" y2="216.07" stroke="rgba(210,200,245,0.04)" stroke-width="0.35"/>
+            
+  <circle cx="400" cy="400" r="8" fill="rgba(74,45,143,0.3)" filter="url(#glow)"/>
+  <circle cx="400" cy="400" r="4" fill="rgba(130,90,200,0.6)"/>
+  <circle cx="400" cy="400" r="1.8" fill="rgba(220,210,252,0.9)"/>
+            
+    <g class="portal-node" style="cursor:pointer" onclick="openCS('Quantum Soul Recalibration','Private 1-on-1 sessions. Structural recalibration at the field level. $180 single / $250 package.','quantum-soul-recalibration.html')">
+      <circle class="node-aura" cx="400" cy="105" r="44" fill="rgba(74,45,143,0.18)" style="animation:nodeAura 3.5s ease-in-out 0.00s infinite alternate"/>
+      <circle class="node-outer" cx="400" cy="105" r="32" fill="rgba(45,24,100,0.85)" stroke="rgba(130,90,200,0.55)" stroke-width="1.2" style="animation:nodePulse 3.5s ease-in-out 0.00s infinite alternate"/>
+      <circle cx="400" cy="105" r="22" fill="url(#orbGrad)"/>
+      <circle cx="400" cy="105" r="5" fill="rgba(184,155,232,0.9)"/>
+      <circle cx="400" cy="105" r="2.5" fill="rgba(220,210,252,0.95)"/>
+      <text x="400" y="151" text-anchor="middle" fill="rgba(210,200,245,0.92)" font-family="Cinzel,serif" font-size="10.5" letter-spacing="0.5" font-weight="500">Quantum Soul</text><text x="400" y="167" text-anchor="middle" fill="rgba(210,200,245,0.92)" font-family="Cinzel,serif" font-size="10.5" letter-spacing="0.5" font-weight="500">Recalibration</text>
+    </g>
+    <g class="portal-node" style="cursor:pointer" onclick="openCS('Quantum Activation Circles','75-minute group containment field. Structural extraction, not temporary relief. $88 per person.','quantum-activation-circles.html')">
+      <circle class="node-aura" cx="630.64" cy="216.07" r="44" fill="rgba(74,45,143,0.18)" style="animation:nodeAura 3.5s ease-in-out 0.55s infinite alternate"/>
+      <circle class="node-outer" cx="630.64" cy="216.07" r="32" fill="rgba(45,24,100,0.85)" stroke="rgba(130,90,200,0.55)" stroke-width="1.2" style="animation:nodePulse 3.5s ease-in-out 0.55s infinite alternate"/>
+      <circle cx="630.64" cy="216.07" r="22" fill="url(#orbGrad)"/>
+      <circle cx="630.64" cy="216.07" r="5" fill="rgba(184,155,232,0.9)"/>
+      <circle cx="630.64" cy="216.07" r="2.5" fill="rgba(220,210,252,0.95)"/>
+      <text x="630.64" y="262.07" text-anchor="middle" fill="rgba(210,200,245,0.92)" font-family="Cinzel,serif" font-size="10.5" letter-spacing="0.5" font-weight="500">Quantum</text><text x="630.64" y="278.07" text-anchor="middle" fill="rgba(210,200,245,0.92)" font-family="Cinzel,serif" font-size="10.5" letter-spacing="0.5" font-weight="500">Activation Circles</text>
+    </g>
+    <g class="portal-node" style="cursor:pointer" onclick="openCS('The Flame','The source code of White Flame Legacy. The authority page — the work, the shift, the reason.','the-flame.html')">
+      <circle class="node-aura" cx="687.6" cy="465.64" r="44" fill="rgba(74,45,143,0.18)" style="animation:nodeAura 3.5s ease-in-out 1.10s infinite alternate"/>
+      <circle class="node-outer" cx="687.6" cy="465.64" r="32" fill="rgba(45,24,100,0.85)" stroke="rgba(130,90,200,0.55)" stroke-width="1.2" style="animation:nodePulse 3.5s ease-in-out 1.10s infinite alternate"/>
+      <circle cx="687.6" cy="465.64" r="22" fill="url(#orbGrad)"/>
+      <circle cx="687.6" cy="465.64" r="5" fill="rgba(184,155,232,0.9)"/>
+      <circle cx="687.6" cy="465.64" r="2.5" fill="rgba(220,210,252,0.95)"/>
+      <text x="687.6" y="511.64" text-anchor="middle" fill="rgba(210,200,245,0.92)" font-family="Cinzel,serif" font-size="10.5" letter-spacing="0.5" font-weight="500">The</text><text x="687.6" y="527.64" text-anchor="middle" fill="rgba(210,200,245,0.92)" font-family="Cinzel,serif" font-size="10.5" letter-spacing="0.5" font-weight="500">Flame</text>
+    </g>
+    <g class="portal-node" style="cursor:pointer" onclick="openCS('Ancestral Web','Level 1 opens June 15th. Deep-dive mapping and extraction of multi-generational inherited code.','ancestral-web.html')">
+      <circle class="node-aura" cx="528" cy="665.79" r="44" fill="rgba(74,45,143,0.18)" style="animation:nodeAura 3.5s ease-in-out 1.65s infinite alternate"/>
+      <circle class="node-outer" cx="528" cy="665.79" r="32" fill="rgba(45,24,100,0.85)" stroke="rgba(130,90,200,0.55)" stroke-width="1.2" style="animation:nodePulse 3.5s ease-in-out 1.65s infinite alternate"/>
+      <circle cx="528" cy="665.79" r="22" fill="url(#orbGrad)"/>
+      <circle cx="528" cy="665.79" r="5" fill="rgba(184,155,232,0.9)"/>
+      <circle cx="528" cy="665.79" r="2.5" fill="rgba(220,210,252,0.95)"/>
+      <text x="528" y="711.79" text-anchor="middle" fill="rgba(210,200,245,0.92)" font-family="Cinzel,serif" font-size="10.5" letter-spacing="0.5" font-weight="500">Ancestral</text><text x="528" y="727.79" text-anchor="middle" fill="rgba(210,200,245,0.92)" font-family="Cinzel,serif" font-size="10.5" letter-spacing="0.5" font-weight="500">Web</text>
+    </g>
+    <g class="portal-node" style="cursor:pointer" onclick="openCS('Guided Meditations','Precision audio tools for field-level recalibration. Coming soon — join the waitlist.','guided-meditations.html')">
+      <circle class="node-aura" cx="272" cy="665.79" r="44" fill="rgba(74,45,143,0.18)" style="animation:nodeAura 3.5s ease-in-out 2.20s infinite alternate"/>
+      <circle class="node-outer" cx="272" cy="665.79" r="32" fill="rgba(45,24,100,0.85)" stroke="rgba(130,90,200,0.55)" stroke-width="1.2" style="animation:nodePulse 3.5s ease-in-out 2.20s infinite alternate"/>
+      <circle cx="272" cy="665.79" r="22" fill="url(#orbGrad)"/>
+      <circle cx="272" cy="665.79" r="5" fill="rgba(184,155,232,0.9)"/>
+      <circle cx="272" cy="665.79" r="2.5" fill="rgba(220,210,252,0.95)"/>
+      <text x="272" y="711.79" text-anchor="middle" fill="rgba(210,200,245,0.92)" font-family="Cinzel,serif" font-size="10.5" letter-spacing="0.5" font-weight="500">Guided</text><text x="272" y="727.79" text-anchor="middle" fill="rgba(210,200,245,0.92)" font-family="Cinzel,serif" font-size="10.5" letter-spacing="0.5" font-weight="500">Meditations</text>
+    </g>
+    <g class="portal-node" style="cursor:pointer" onclick="openCS('Book & Connect','Contact and logistics. Send an enquiry or begin the conversation.','book-connect.html')">
+      <circle class="node-aura" cx="112.4" cy="465.64" r="44" fill="rgba(74,45,143,0.18)" style="animation:nodeAura 3.5s ease-in-out 2.75s infinite alternate"/>
+      <circle class="node-outer" cx="112.4" cy="465.64" r="32" fill="rgba(45,24,100,0.85)" stroke="rgba(130,90,200,0.55)" stroke-width="1.2" style="animation:nodePulse 3.5s ease-in-out 2.75s infinite alternate"/>
+      <circle cx="112.4" cy="465.64" r="22" fill="url(#orbGrad)"/>
+      <circle cx="112.4" cy="465.64" r="5" fill="rgba(184,155,232,0.9)"/>
+      <circle cx="112.4" cy="465.64" r="2.5" fill="rgba(220,210,252,0.95)"/>
+      <text x="112.4" y="511.64" text-anchor="middle" fill="rgba(210,200,245,0.92)" font-family="Cinzel,serif" font-size="10.5" letter-spacing="0.5" font-weight="500">Book &</text><text x="112.4" y="527.64" text-anchor="middle" fill="rgba(210,200,245,0.92)" font-family="Cinzel,serif" font-size="10.5" letter-spacing="0.5" font-weight="500">Connect</text>
+    </g>
+    <g class="portal-node" style="cursor:pointer" onclick="openCS('The Field','The Field is forming. Register your interest to be among the first.','the-field.html')">
+      <circle class="node-aura" cx="169.36" cy="216.07" r="44" fill="rgba(74,45,143,0.18)" style="animation:nodeAura 3.5s ease-in-out 3.30s infinite alternate"/>
+      <circle class="node-outer" cx="169.36" cy="216.07" r="32" fill="rgba(45,24,100,0.85)" stroke="rgba(130,90,200,0.55)" stroke-width="1.2" style="animation:nodePulse 3.5s ease-in-out 3.30s infinite alternate"/>
+      <circle cx="169.36" cy="216.07" r="22" fill="url(#orbGrad)"/>
+      <circle cx="169.36" cy="216.07" r="5" fill="rgba(184,155,232,0.9)"/>
+      <circle cx="169.36" cy="216.07" r="2.5" fill="rgba(220,210,252,0.95)"/>
+      <text x="169.36" y="262.07" text-anchor="middle" fill="rgba(210,200,245,0.92)" font-family="Cinzel,serif" font-size="10.5" letter-spacing="0.5" font-weight="500">The</text><text x="169.36" y="278.07" text-anchor="middle" fill="rgba(210,200,245,0.92)" font-family="Cinzel,serif" font-size="10.5" letter-spacing="0.5" font-weight="500">Field</text>
+    </g>
           </svg>
         </div>
       </section>
