@@ -605,9 +605,8 @@ function handleSubmit(){
   var fd=new FormData();
   fd.append('fields[name]',name);fd.append('fields[email]',email);fd.append('ml-submit','1');fd.append('anticsrf','true');
   fetch('https://assets.mailerlite.com/jsonp/2533825/forms/199435465380595652/subscribe',{method:'POST',body:fd})
-    .then(function(r){return r.json();})
-    .then(function(res){
-      if(!res||!res.success){throw new Error('signup failed');}
+    .then(function(r){
+      if(!(r.ok||r.status===204)){throw new Error('signup failed');}
       document.getElementById('pf').style.display='none';
       document.getElementById('ps').classList.add('on');
     })
