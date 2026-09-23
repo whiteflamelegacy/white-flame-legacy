@@ -95,11 +95,12 @@
         email: document.getElementById('fEmail').value.trim()
       };
       try {
-        const r = await fetch('https://api.github.com/repos/whiteflamelegacy/white-flame-legacy/dispatches', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token GITHUB_TOKEN_PLACEHOLDER' },
-          body: JSON.stringify({ event_type: 'waitlist', client_payload: payload })
-        });
+        const fd = new FormData();
+        fd.append('fields[name]', payload.name);
+        fd.append('fields[email]', payload.email);
+        fd.append('ml-submit', '1');
+        fd.append('anticsrf', 'true');
+        const r = await fetch('https://assets.mailerlite.com/jsonp/2533825/forms/199435465380595652/subscribe', { method: 'POST', body: fd });
         if (r.status === 204 || r.ok) {
           document.getElementById('fieldForm').style.display = 'none';
           status.className = 'form-status success';
