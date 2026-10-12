@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guided Meditations â White Flame Legacy</title>
-  <meta name="description" content="Coming soon. Join the waitlist to be notified when Guided Meditations opens.">
+  <title>Guided Meditations — White Flame Legacy</title>
+  <meta name="description" content="Explore free and paid guided meditations from White Flame Legacy, with direct links to each meditation on Stan.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
@@ -48,32 +48,83 @@
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @media (max-width: 768px) { nav { padding: 1.2rem 1.5rem; } }
+
+    .stan-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 1.5rem 0; }
+    .stan-link { display: inline-block; border: 1px solid rgba(201,168,76,0.5); padding: 0.85rem 1.3rem; color: var(--gold-light); font-family: 'Raleway', sans-serif; font-size: 0.75rem; letter-spacing: 0.12em; text-decoration: none; line-height: 1.6; }
+    .stan-link:hover { background: rgba(201,168,76,0.1); }
+    .stan-link:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+    .stan-note { color: var(--text-secondary); font-size: 1rem; max-width: 620px; margin: 0 auto 2rem; }
+    footer .footer-links { position: static; background: none; border: none; padding: 0; flex-wrap: wrap; }
+    .meditation-list { width: 100%; max-width: 760px; text-align: left; }
+    .meditation-item { padding: 2rem 0; border-bottom: 1px solid rgba(201,168,76,0.18); }
+    .meditation-item h2 { font-family: 'Cinzel', serif; font-size: clamp(1rem, 3vw, 1.4rem); font-weight: 400; line-height: 1.6; margin-bottom: 0.8rem; }
+    .meditation-item .stan-note { margin: 0 0 1rem; }
   </style>
 </head>
 <body>
   <nav>
     <a href="index.html" class="nav-brand">White Flame Legacy</a>
-    <a href="index.html" class="nav-back">â Return</a>
+    <a href="index.html" class="nav-back">← Return</a>
   </nav>
   <section class="hero">
-    <span class="coming-badge">Coming Soon</span>
+    <span class="coming-badge">Audio Library</span>
     <h1 class="hero-title"><span>Guided<br>Meditations</span></h1>
     <div class="hero-divider"></div>
-    <p class="tagline">Precision-built audio for field-level work. Not background noise â active recalibration tools. Join the waitlist to be notified when access opens.</p>
-    <div class="waitlist-form">
-      <form id="waitlistForm" onsubmit="joinWaitlist(event)">
-        <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off">
-        <label class="waitlist-label" for="wName">Join the Waitlist</label>
-        <div class="name-row">
-          <input class="form-input" type="text" id="wName" name="name" required placeholder="Your full name">
-        </div>
-        <div class="input-row">
-          <input class="form-input" type="email" id="wEmail" name="email" required placeholder="your@email.com">
-          <button type="submit" class="btn-join" id="joinBtn">Notify Me</button>
-        </div>
-      </form>
-      <div class="form-status" id="formStatus"></div>
+    <p class="tagline">Explore the published audio library. Each link takes you to that meditation on Stan, with its current details and pricing.</p>
+    <p class="stan-note">Looking for the free website Lemurian offer? <a class="stan-link" href="index.html#begin">Receive Your Free Lemurian Meditation</a></p>
+    <div class="meditation-list">
+      <article class="meditation-item">
+        <h2>Grounding Meditation (Free)</h2>
+        <p class="stan-note">A free 7-minute meditation to get back in your body.</p>
+        <a class="stan-link" href="https://stan.store/whiteflamelegacy/p/grounding-meditation-free?lang=en">Get It Free on Stan</a>
+      </article>
+      <article class="meditation-item">
+        <h2>Emotional Release Meditation (Free)</h2>
+        <p class="stan-note">A free 6-minute meditation to release what you&#x27;re carrying.</p>
+        <a class="stan-link" href="https://stan.store/whiteflamelegacy/p/emotional-release-meditation-free?lang=en">Get It Free on Stan</a>
+      </article>
+      <article class="meditation-item">
+        <h2>Ancestral Line Healing &amp; Forgiveness Meditation</h2>
+        <p class="stan-note">32 minutes. Send healing, forgiveness and release through your bloodline.</p>
+        <a class="stan-link" href="https://stan.store/whiteflamelegacy/p/ancestral-line-healing--forgiveness-meditation-joc8x3n6?lang=en">View &amp; Purchase on Stan</a>
+      </article>
+      <article class="meditation-item">
+        <h2>Lemurian Clearing &amp; Activation Meditation</h2>
+        <p class="stan-note">22 minutes. A soul-cleansing activation with Lemurian frequencies. This is the paid Stan version; the free website offer remains separate.</p>
+        <a class="stan-link" href="https://stan.store/whiteflamelegacy/p/lemurian-clearing--activation-meditation?lang=en">View &amp; Purchase on Stan</a>
+      </article>
+      <article class="meditation-item">
+        <h2>Energetic Parasite Cleanse</h2>
+        <p class="stan-note">23 minutes. Release the frequencies keeping you looping in narcissistic dynamics.</p>
+        <a class="stan-link" href="https://stan.store/whiteflamelegacy/p/energetic-parasite-cleanse?lang=en">View &amp; Purchase on Stan</a>
+      </article>
+      <article class="meditation-item">
+        <h2>Akashic Clearing Meditation</h2>
+        <p class="stan-note">12 minutes. Clear what&#x27;s been written into your field.</p>
+        <a class="stan-link" href="https://stan.store/whiteflamelegacy/p/akashic-clearing-meditation?lang=en">View &amp; Purchase on Stan</a>
+      </article>
+      <article class="meditation-item">
+        <h2>Release Cord Meditation</h2>
+        <p class="stan-note">7 minutes to pull the cords draining your energy.</p>
+        <a class="stan-link" href="https://stan.store/whiteflamelegacy/p/release-cord-meditation?lang=en">View &amp; Purchase on Stan</a>
+      </article>
+      <article class="meditation-item">
+        <h2>Soul Retrieval Meditation</h2>
+        <p class="stan-note">31 minutes. Call your scattered energy back home through the Akashic Records.</p>
+        <a class="stan-link" href="https://stan.store/whiteflamelegacy/p/soul-retrieval-meditation?lang=en">View &amp; Purchase on Stan</a>
+      </article>
+      <article class="meditation-item">
+        <h2>Connecting to Source Grounding Meditation</h2>
+        <p class="stan-note">17 minutes to ground in and reconnect to Source.</p>
+        <a class="stan-link" href="https://stan.store/whiteflamelegacy/p/connecting-to-source-grounding-meditation?lang=en">View &amp; Purchase on Stan</a>
+      </article>
+      <article class="meditation-item">
+        <h2>Phoenix Rising Death &amp; Rebirth Meditation</h2>
+        <p class="stan-note">1 hour 8 minutes. A full death and rebirth journey. Let the old self go.</p>
+        <a class="stan-link" href="https://stan.store/whiteflamelegacy/p/phoenix-rising-death--rebirth-meditation?lang=en">View &amp; Purchase on Stan</a>
+      </article>
     </div>
+    <div class="stan-actions"><a class="stan-link" href="https://stan.store/whiteflamelegacy">Explore the Full Store</a></div>
   </section>
   <footer>
     <div class="footer-brand">White Flame Legacy</div>
@@ -84,36 +135,5 @@
     </nav>
     <p class="footer-copy">&copy; 2025 White Flame Legacy. All Rights Reserved.<br>All content is the intellectual property of White Flame Legacy and Kalista.<br>Unauthorized reproduction is strictly prohibited.</p>
   </footer>
-  <script>
-    const DISPATCH_TOKEN = 'PASTE_YOUR_DISPATCH_TOKEN_HERE';
-    async function joinWaitlist(e) {
-      e.preventDefault();
-      if (document.querySelector('.honeypot').value) return;
-      const btn = document.getElementById('joinBtn');
-      btn.disabled = true; btn.textContent = '...';
-      const status = document.getElementById('formStatus');
-      const payload = {
-        type: 'guided_meditations_waitlist',
-        name: document.getElementById('wName').value.trim(),
-        email: document.getElementById('wEmail').value.trim()
-      };
-      try {
-        const r = await fetch('https://api.github.com/repos/whiteflamelegacy/white-flame-legacy/dispatches', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token ' + DISPATCH_TOKEN },
-          body: JSON.stringify({ event_type: 'waitlist', client_payload: payload })
-        });
-        if (r.status === 204 || r.ok) {
-          document.getElementById('waitlistForm').style.display = 'none';
-          status.className = 'form-status success';
-          status.textContent = 'You are on the waitlist. Kalista will be in touch when access opens.';
-        } else throw new Error('Error');
-      } catch(err) {
-        status.className = 'form-status error';
-        status.innerHTML = 'Technical issue. Email <strong>kalistawhiteflame@gmail.com</strong> to join the waitlist directly.';
-        btn.disabled = false; btn.textContent = 'Notify Me';
-      }
-    }
-  </script>
 </body>
 </html>

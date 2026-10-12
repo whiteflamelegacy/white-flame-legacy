@@ -397,7 +397,8 @@ footer{
     .web-container{opacity:1!important;transform:none!important;display:flex;justify-content:center;width:100%;}
     .web-svg{display:block;width:auto;max-width:100%;height:min(75vh,680px);margin:0 auto;}
     .web-label,.web-heading{opacity:1!important;transform:none!important;}
-  </style>
+  .portal-node:focus-visible .node-ring{stroke:var(--gold)!important;stroke-width:3px}
+</style>
 </head>
 <body>
 
@@ -449,6 +450,7 @@ footer{
   <ul class="nav-links">
     <li><a href="#journey">The Work</a></li>
     <li><a href="#web">Explore</a></li>
+      <li><a href="https://stan.store/whiteflamelegacy">Store</a></li>
   </ul>
   <a class="nav-begin" href="#" onclick="openPopup();return false">Begin</a>
 </nav>
@@ -461,7 +463,7 @@ footer{
   <h1 class="hero-title">White Flame Legacy</h1>
   <p class="hero-sub">Where biology, consciousness &amp; ancestral memory converge</p>
   <div class="hero-divider"></div>
-  <div class="hero-text">
+  <div class="hero-text" id="journey">
     <p class="hero-text-top">Reprogramming inherited epigenetic code at the quantum field level</p>
     <p class="hero-text-body">
       Every cell in your body carries <strong>3 billion base pairs of DNA</strong> — shaped not only by your own experience, but by the unresolved code of every ancestor before you.
@@ -503,7 +505,7 @@ footer{
             <circle cx="400" cy="400" r="4" fill="rgba(130,95,205,0.7)"/>
             <circle cx="400" cy="400" r="1.8" fill="rgba(225,215,255,0.95)"/>
             <line x1="400" y1="400" x2="400" y2="78" stroke="rgba(215,205,245,0.15)" stroke-width="1"/>"<line x1="400" y1="400" x2="651.7" y2="199.2" stroke="rgba(215,205,245,0.15)" stroke-width="1"/>"<line x1="400" y1="400" x2="713.9" y2="471.7" stroke="rgba(215,205,245,0.15)" stroke-width="1"/>"<line x1="400" y1="400" x2="539.7" y2="690.1" stroke="rgba(215,205,245,0.15)" stroke-width="1"/>"<line x1="400" y1="400" x2="260.3" y2="690.1" stroke="rgba(215,205,245,0.15)" stroke-width="1"/>"<line x1="400" y1="400" x2="86.1" y2="471.7" stroke="rgba(215,205,245,0.15)" stroke-width="1"/>"<line x1="400" y1="400" x2="148.3" y2="199.2" stroke="rgba(215,205,245,0.15)" stroke-width="1"/>"<polygon points="400,295 478.2,337.7 498.5,422.5 443,489.2 355.7,491.9 301.5,422.5 321.8,337.7" fill="none" stroke="rgba(215,205,245,0.07)" stroke-width="0.65" stroke-linejoin="round"/><polygon points="400,205 548.5,281.5 586.2,442.5 482,570.3 316.7,573 213.8,442.5 251.5,281.5" fill="none" stroke="rgba(215,205,245,0.09)" stroke-width="0.75" stroke-linejoin="round"/><polygon points="400,100 630.6,216.1 688.6,465.9 527.6,664.9 271.1,667.6 111.4,465.9 169.4,216.1" fill="none" stroke="rgba(215,205,245,0.12)" stroke-width="0.9" stroke-linejoin="round"/><line x1="400" y1="295" x2="552.5" y2="278.4" stroke="rgba(215,205,245,0.055)" stroke-width="0.45"/><line x1="400" y1="205" x2="634.5" y2="213" stroke="rgba(215,205,245,0.05)" stroke-width="0.4"/><line x1="482.1" y1="334.5" x2="590.1" y2="443.4" stroke="rgba(215,205,245,0.055)" stroke-width="0.45"/><line x1="552.5" y1="278.4" x2="692.5" y2="466.8" stroke="rgba(215,205,245,0.05)" stroke-width="0.4"/><line x1="502.4" y1="423.4" x2="484.6" y2="575.7" stroke="rgba(215,205,245,0.055)" stroke-width="0.45"/><line x1="590.1" y1="443.4" x2="530.2" y2="670.3" stroke="rgba(215,205,245,0.05)" stroke-width="0.4"/><line x1="445.6" y1="494.6" x2="315.4" y2="575.7" stroke="rgba(215,205,245,0.055)" stroke-width="0.45"/><line x1="484.6" y1="575.7" x2="269.8" y2="670.3" stroke="rgba(215,205,245,0.05)" stroke-width="0.4"/><line x1="354.4" y1="494.6" x2="209.9" y2="443.4" stroke="rgba(215,205,245,0.055)" stroke-width="0.45"/><line x1="315.4" y1="575.7" x2="107.5" y2="466.8" stroke="rgba(215,205,245,0.05)" stroke-width="0.4"/><line x1="297.6" y1="423.4" x2="247.5" y2="278.4" stroke="rgba(215,205,245,0.055)" stroke-width="0.45"/><line x1="209.9" y1="443.4" x2="165.5" y2="213" stroke="rgba(215,205,245,0.05)" stroke-width="0.4"/><line x1="317.9" y1="334.5" x2="400" y2="205" stroke="rgba(215,205,245,0.055)" stroke-width="0.45"/><line x1="247.5" y1="278.4" x2="400" y2="100" stroke="rgba(215,205,245,0.05)" stroke-width="0.4"/>
-  <g class="portal-node" onclick="openCS('Quantum Soul Recalibration','Private 1-on-1 sessions. Structural recalibration at the field level. $180 single / $250 package.','quantum-soul-recalibration.html')" style="cursor:pointer">
+  <g class="portal-node" role="link" tabindex="0" aria-label="Quantum Soul Recalibration" onclick="window.location.assign('quantum-soul-recalibration.html')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.assign('quantum-soul-recalibration.html')}" style="cursor:pointer">
     <circle cx="400" cy="100" r="46" fill="rgba(55,28,120,0.12)" class="node-aura" style="animation:nodeAura 3.5s 0.00s ease-in-out infinite alternate"/>
     <circle cx="400" cy="100" r="33" fill="rgba(40,18,90,0.88)" stroke="rgba(110,75,190,0.6)" stroke-width="1.2" class="node-ring" style="animation:nodeRing 3.5s 0.00s ease-in-out infinite alternate"/>
     <circle cx="400" cy="100" r="22" fill="url(#vg)"/>
@@ -511,7 +513,7 @@ footer{
     <circle cx="400" cy="100" r="2"  fill="rgba(225,215,255,1)"/>
     <text x="400" y="144" text-anchor="middle" font-family="Cinzel,serif" font-size="10.5" font-weight="500" letter-spacing="0.5" fill="rgba(215,205,245,0.92)">Quantum Soul</text><text x="400" y="159" text-anchor="middle" font-family="Cinzel,serif" font-size="10.5" font-weight="500" letter-spacing="0.5" fill="rgba(215,205,245,0.92)">Recalibration</text>
   </g>
-  <g class="portal-node" onclick="openCS('Quantum Activation Circles','75-minute group containment field. Structural extraction, not temporary relief. $88 per person.','quantum-activation-circles.html')" style="cursor:pointer">
+  <g class="portal-node" role="link" tabindex="0" aria-label="Quantum Activation Circles" onclick="window.location.assign('quantum-activation-circles.html')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.assign('quantum-activation-circles.html')}" style="cursor:pointer">
     <circle cx="634.5" cy="213" r="46" fill="rgba(55,28,120,0.12)" class="node-aura" style="animation:nodeAura 3.5s 0.55s ease-in-out infinite alternate"/>
     <circle cx="634.5" cy="213" r="33" fill="rgba(40,18,90,0.88)" stroke="rgba(110,75,190,0.6)" stroke-width="1.2" class="node-ring" style="animation:nodeRing 3.5s 0.55s ease-in-out infinite alternate"/>
     <circle cx="634.5" cy="213" r="22" fill="url(#vg)"/>
@@ -519,7 +521,7 @@ footer{
     <circle cx="634.5" cy="213" r="2"  fill="rgba(225,215,255,1)"/>
     <text x="634.5" y="257" text-anchor="middle" font-family="Cinzel,serif" font-size="10.5" font-weight="500" letter-spacing="0.5" fill="rgba(215,205,245,0.92)">Quantum</text><text x="634.5" y="272" text-anchor="middle" font-family="Cinzel,serif" font-size="10.5" font-weight="500" letter-spacing="0.5" fill="rgba(215,205,245,0.92)">Activation Circles</text>
   </g>
-  <g class="portal-node" onclick="openCS('The Flame','The source code of White Flame Legacy — the decades of work, the shift, the reason this exists.','the-flame.html')" style="cursor:pointer">
+  <g class="portal-node" role="link" tabindex="0" aria-label="The Flame" onclick="window.location.assign('the-flame.html')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.assign('the-flame.html')}" style="cursor:pointer">
     <circle cx="692.5" cy="466.8" r="46" fill="rgba(55,28,120,0.12)" class="node-aura" style="animation:nodeAura 3.5s 1.10s ease-in-out infinite alternate"/>
     <circle cx="692.5" cy="466.8" r="33" fill="rgba(40,18,90,0.88)" stroke="rgba(110,75,190,0.6)" stroke-width="1.2" class="node-ring" style="animation:nodeRing 3.5s 1.10s ease-in-out infinite alternate"/>
     <circle cx="692.5" cy="466.8" r="22" fill="url(#vg)"/>
@@ -527,7 +529,7 @@ footer{
     <circle cx="692.5" cy="466.8" r="2"  fill="rgba(225,215,255,1)"/>
     <text x="692.5" y="510.8" text-anchor="middle" font-family="Cinzel,serif" font-size="10.5" font-weight="500" letter-spacing="0.5" fill="rgba(215,205,245,0.92)">The Flame</text>
   </g>
-  <g class="portal-node" onclick="openCS('Ancestral Web','Level 1 opens June 15th. Deep-dive mapping and extraction of multi-generational inherited code.','ancestral-web.html')" style="cursor:pointer">
+  <g class="portal-node" role="link" tabindex="0" aria-label="Ancestral Web" onclick="window.location.assign('ancestral-web.html')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.assign('ancestral-web.html')}" style="cursor:pointer">
     <circle cx="530.2" cy="670.3" r="46" fill="rgba(55,28,120,0.12)" class="node-aura" style="animation:nodeAura 3.5s 1.65s ease-in-out infinite alternate"/>
     <circle cx="530.2" cy="670.3" r="33" fill="rgba(40,18,90,0.88)" stroke="rgba(110,75,190,0.6)" stroke-width="1.2" class="node-ring" style="animation:nodeRing 3.5s 1.65s ease-in-out infinite alternate"/>
     <circle cx="530.2" cy="670.3" r="22" fill="url(#vg)"/>
@@ -535,7 +537,7 @@ footer{
     <circle cx="530.2" cy="670.3" r="2"  fill="rgba(225,215,255,1)"/>
     <text x="530.2" y="714.3" text-anchor="middle" font-family="Cinzel,serif" font-size="10.5" font-weight="500" letter-spacing="0.5" fill="rgba(215,205,245,0.92)">Ancestral Web</text>
   </g>
-  <g class="portal-node" onclick="openCS('Guided Meditations','Precision audio tools for field-level recalibration. Coming soon — join the waitlist.','guided-meditations.html')" style="cursor:pointer">
+  <g class="portal-node" role="link" tabindex="0" aria-label="Guided Meditations" onclick="window.location.assign('guided-meditations.html')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.assign('guided-meditations.html')}" style="cursor:pointer">
     <circle cx="269.8" cy="670.3" r="46" fill="rgba(55,28,120,0.12)" class="node-aura" style="animation:nodeAura 3.5s 2.20s ease-in-out infinite alternate"/>
     <circle cx="269.8" cy="670.3" r="33" fill="rgba(40,18,90,0.88)" stroke="rgba(110,75,190,0.6)" stroke-width="1.2" class="node-ring" style="animation:nodeRing 3.5s 2.20s ease-in-out infinite alternate"/>
     <circle cx="269.8" cy="670.3" r="22" fill="url(#vg)"/>
@@ -543,7 +545,7 @@ footer{
     <circle cx="269.8" cy="670.3" r="2"  fill="rgba(225,215,255,1)"/>
     <text x="269.8" y="714.3" text-anchor="middle" font-family="Cinzel,serif" font-size="10.5" font-weight="500" letter-spacing="0.5" fill="rgba(215,205,245,0.92)">Guided</text><text x="269.8" y="729.3" text-anchor="middle" font-family="Cinzel,serif" font-size="10.5" font-weight="500" letter-spacing="0.5" fill="rgba(215,205,245,0.92)">Meditations</text>
   </g>
-  <g class="portal-node" onclick="openCS('Book and Connect','Contact and logistics. Send an enquiry or begin the conversation.','book-connect.html')" style="cursor:pointer">
+  <g class="portal-node" role="link" tabindex="0" aria-label="Book and Connect" onclick="window.location.assign('book-connect.html')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.assign('book-connect.html')}" style="cursor:pointer">
     <circle cx="107.5" cy="466.8" r="46" fill="rgba(55,28,120,0.12)" class="node-aura" style="animation:nodeAura 3.5s 2.75s ease-in-out infinite alternate"/>
     <circle cx="107.5" cy="466.8" r="33" fill="rgba(40,18,90,0.88)" stroke="rgba(110,75,190,0.6)" stroke-width="1.2" class="node-ring" style="animation:nodeRing 3.5s 2.75s ease-in-out infinite alternate"/>
     <circle cx="107.5" cy="466.8" r="22" fill="url(#vg)"/>
@@ -551,7 +553,7 @@ footer{
     <circle cx="107.5" cy="466.8" r="2"  fill="rgba(225,215,255,1)"/>
     <text x="107.5" y="510.8" text-anchor="middle" font-family="Cinzel,serif" font-size="10.5" font-weight="500" letter-spacing="0.5" fill="rgba(215,205,245,0.92)">Book &</text><text x="107.5" y="525.8" text-anchor="middle" font-family="Cinzel,serif" font-size="10.5" font-weight="500" letter-spacing="0.5" fill="rgba(215,205,245,0.92)">Connect</text>
   </g>
-  <g class="portal-node" onclick="openCS('The Field','The Field is forming. Register your interest to be among the first to know.','the-field.html')" style="cursor:pointer">
+  <g class="portal-node" role="link" tabindex="0" aria-label="The Field" onclick="window.location.assign('the-field.html')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.assign('the-field.html')}" style="cursor:pointer">
     <circle cx="165.5" cy="213" r="46" fill="rgba(55,28,120,0.12)" class="node-aura" style="animation:nodeAura 3.5s 3.30s ease-in-out infinite alternate"/>
     <circle cx="165.5" cy="213" r="33" fill="rgba(40,18,90,0.88)" stroke="rgba(110,75,190,0.6)" stroke-width="1.2" class="node-ring" style="animation:nodeRing 3.5s 3.30s ease-in-out infinite alternate"/>
     <circle cx="165.5" cy="213" r="22" fill="url(#vg)"/>
@@ -564,7 +566,7 @@ footer{
       </section>
 
 <!-- FOOTER CTA -->
-<section style="position:relative;z-index:1;text-align:center;padding:6rem 2rem;border-top:1px solid rgba(85,53,184,0.12)">
+<section id="begin" style="position:relative;z-index:1;text-align:center;padding:6rem 2rem;border-top:1px solid rgba(85,53,184,0.12)">
   <span class="web-label reveal">The invitation</span>
   <h2 class="web-heading reveal" style="max-width:600px;margin:0 auto 1.5rem">Are you ready to rewrite<br>what was handed to you?</h2>
   <p class="reveal" style="font-size:1.1rem;font-style:italic;color:var(--silver);max-width:500px;margin:0 auto 2.5rem;line-height:1.9;transition-delay:0.1s">The first step is free. All that is required is the willingness to step across the threshold.</p>
@@ -582,6 +584,7 @@ footer{
     <li><a href="#web">The Field</a></li>
     <li><a href="mailto:kalistawhiteflame@gmail.com">Contact</a></li>
     <li><a href="#" onclick="openPopup();return false">Begin</a></li>
+      <li><a href="https://stan.store/whiteflamelegacy">Stan Store</a></li>
   </ul>
   <p class="footer-copy">&copy; 2025 White Flame Legacy &nbsp;&middot;&nbsp; whiteflamelegacy.com &nbsp;&middot;&nbsp; All rights reserved.</p>
 </footer>
