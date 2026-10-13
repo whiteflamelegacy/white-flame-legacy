@@ -49,6 +49,13 @@
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @media (max-width: 768px) { nav { padding: 1.2rem 1.5rem; } }
+
+    .stan-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 1.5rem 0; }
+    .stan-link { display: inline-block; border: 1px solid rgba(201,168,76,0.5); padding: 0.85rem 1.3rem; color: var(--gold-light); font-family: 'Raleway', sans-serif; font-size: 0.75rem; letter-spacing: 0.12em; text-decoration: none; line-height: 1.6; }
+    .stan-link:hover { background: rgba(201,168,76,0.1); }
+    .stan-link:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+    .stan-note { color: var(--text-secondary); font-size: 1rem; max-width: 620px; margin: 0 auto 2rem; }
+    footer .footer-links { position: static; background: none; border: none; padding: 0; flex-wrap: wrap; }
   </style>
 </head>
 <body>
@@ -62,6 +69,12 @@
     <div class="hero-divider"></div>
   </section>
   <main class="page-content">
+    <span class="section-label">Begin with a Conversation</span>
+    <h2>Free 30-Minute Discovery Call</h2>
+    <p class="intro-text">Let's look at what's coming up in your lineage and where to go next. This is a discovery call, not a paid Quantum Soul Recalibration session.</p>
+    <div class="stan-actions"><a class="stan-link" href="https://stan.store/whiteflamelegacy/p/free-30minute-discovery-call-v73fwqjh?lang=en">Book My Free Call on Stan</a></div>
+    <div class="stan-actions"><a class="stan-link" href="https://stan.store/whiteflamelegacy">Explore the Stan Store</a><a class="stan-link" href="mailto:kalistawhiteflame@gmail.com">Email Kalista Directly</a></div>
+    <p class="stan-note">For general enquiries, direct email is available. The older enquiry form below is not yet connected; please use the email link rather than relying on it.</p>
     <span class="section-label">Send an Enquiry</span>
     <p class="intro-text">Use this form for general enquiries, logistics questions, or anything that doesn't fit the booking calendars. For session bookings, use the booking pages directly.</p>
     <form id="contactForm" onsubmit="submitEnquiry(event)">

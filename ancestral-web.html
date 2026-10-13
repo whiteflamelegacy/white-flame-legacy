@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ancestral Web â White Flame Legacy</title>
-  <meta name="description" content="Level 1 opens June 15th. Join the waitlist. $333/month or $888 outright.">
+  <title>Ancestral Web — White Flame Legacy</title>
+  <meta name="description" content="Explore The Ancestral Case File and Unraveling the Ancestral Web: 12-Strand Journey. Access the published courses through our Stan store.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet">
@@ -50,34 +50,32 @@
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @media (max-width: 768px) { nav { padding: 1.2rem 1.5rem; } }
+
+    .stan-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 1.5rem 0; }
+    .stan-link { display: inline-block; border: 1px solid rgba(201,168,76,0.5); padding: 0.85rem 1.3rem; color: var(--gold-light); font-family: 'Raleway', sans-serif; font-size: 0.75rem; letter-spacing: 0.12em; text-decoration: none; line-height: 1.6; }
+    .stan-link:hover { background: rgba(201,168,76,0.1); }
+    .stan-link:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+    .stan-note { color: var(--text-secondary); font-size: 1rem; max-width: 620px; margin: 0 auto 2rem; }
+    footer .footer-links { position: static; background: none; border: none; padding: 0; flex-wrap: wrap; }
   </style>
 </head>
 <body>
   <nav>
     <a href="index.html" class="nav-brand">White Flame Legacy</a>
-    <a href="index.html" class="nav-back">â Return</a>
+    <a href="index.html" class="nav-back">← Return</a>
   </nav>
   <section class="hero">
-    <span class="coming-badge">Coming Soon</span>
+    <span class="coming-badge">Training &amp; Education</span>
     <h1 class="hero-title"><span>Ancestral Web</span></h1>
-    <p class="open-date">Level 1 Opens June 15th</p>
-    <p class="pricing">$333 / month &nbsp;&bull;&nbsp; $888 Outright</p>
     <div class="hero-divider"></div>
-    <p class="tagline">The lineage work begins here. You cannot delete what you cannot see. The Ancestral Web maps the field of inherited code with surgical precision â and begins the extraction.</p>
-    <div class="waitlist-form">
-      <form id="waitlistForm" onsubmit="joinWaitlist(event)">
-        <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off">
-        <label class="waitlist-label" for="wName">Join the Waitlist</label>
-        <div class="name-input-row">
-          <input class="form-input" type="text" id="wName" name="name" required placeholder="Your full name">
-        </div>
-        <div class="input-row">
-          <input class="form-input" type="email" id="wEmail" name="email" required placeholder="your@email.com">
-          <button type="submit" class="btn-join" id="joinBtn">Notify Me</button>
-        </div>
-      </form>
-      <div class="form-status" id="formStatus"></div>
-    </div>
+    <p class="tagline">Explore the published training below. Read the full course details and current pricing on Stan before enrolling.</p>
+    <h2>The Ancestral Case File</h2>
+    <p class="stan-note">5 recorded classes, a workbook and a full clearing session.</p>
+    <div class="stan-actions"><a class="stan-link" href="https://stan.store/whiteflamelegacy/p/the-ancestral-case-file?lang=en">Get the Case File</a></div>
+    <h2>Unraveling the Ancestral Web:<br>12-Strand Journey</h2>
+    <p class="stan-note">Self-paced. Map the web you were born into, and step out of it as the Architect.</p>
+    <div class="stan-actions"><a class="stan-link" href="https://stan.store/whiteflamelegacy/p/unraveling-the-ancestral-web-12strand-journey?lang=en">Enter the Web</a></div>
+    <div class="stan-actions"><a class="stan-link" href="https://stan.store/whiteflamelegacy">Explore the Full Store</a></div>
   </section>
   <footer>
     <div class="footer-brand">White Flame Legacy</div>
@@ -88,35 +86,5 @@
     </nav>
     <p class="footer-copy">&copy; 2025 White Flame Legacy. All Rights Reserved.<br>All content is the intellectual property of White Flame Legacy and Kalista.<br>Unauthorized reproduction is strictly prohibited.</p>
   </footer>
-  <script>
-    const DISPATCH_TOKEN = 'PASTE_YOUR_DISPATCH_TOKEN_HERE';
-    async function joinWaitlist(e) {
-      e.preventDefault();
-      if (document.querySelector('.honeypot').value) return;
-      const btn = document.getElementById('joinBtn');
-      btn.disabled = true; btn.textContent = '...';
-      const status = document.getElementById('formStatus');
-      const payload = {
-        type: 'ancestral_web_waitlist',
-        name: document.getElementById('wName').value.trim(),
-        email: document.getElementById('wEmail').value.trim()
-      };
-      try {
-        const r = await fetch('https://api.github.com/repos/whiteflamelegacy/white-flame-legacy/dispatches', {
-          method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token ' + DISPATCH_TOKEN},
-          body: JSON.stringify({event_type: 'waitlist', client_payload: payload})
-        });
-        if (r.status === 204 || r.ok) {
-          document.getElementById('waitlistForm').style.display = 'none';
-          status.className = 'form-status success';
-          status.innerHTML = 'You are on the waitlist. Kalista will be in touch before June 15th.';
-        } else throw new Error('Error');
-      } catch(err) {
-        status.className = 'form-status error';
-        status.innerHTML = 'Technical issue. Email <strong>kalistawhiteflame@gmail.com</strong> to join the waitlist directly.';
-        btn.disabled = false; btn.textContent = 'Notify Me';
-      }
-    }
-  </script>
 </body>
 </html>
