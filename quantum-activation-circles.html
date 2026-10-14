@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quantum Activation Circles â White Flame Legacy</title>
+  <title>Quantum Activation Circles — White Flame Legacy</title>
   <meta name="description" content="Group sessions. A 75-minute high-frequency containment field. Structural extraction, not temporary relief. $88 per person.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,12 +92,19 @@
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @media (max-width: 768px) { nav { padding: 1.2rem 1.5rem; } .cal-wrapper { padding: 1.5rem; } .approved-copy { padding: 2rem 1.5rem; } .corp-section { padding: 2rem 1.5rem; } }
+
+    .stan-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 1.5rem 0; }
+    .stan-link { display: inline-block; border: 1px solid rgba(201,168,76,0.5); padding: 0.85rem 1.3rem; color: var(--gold-light); font-family: 'Raleway', sans-serif; font-size: 0.75rem; letter-spacing: 0.12em; text-decoration: none; line-height: 1.6; }
+    .stan-link:hover { background: rgba(201,168,76,0.1); }
+    .stan-link:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+    .stan-note { color: var(--text-secondary); font-size: 1rem; max-width: 620px; margin: 0 auto 2rem; }
+    footer .footer-links { position: static; background: none; border: none; padding: 0; flex-wrap: wrap; }
   </style>
 </head>
 <body>
   <nav>
     <a href="index.html" class="nav-brand">White Flame Legacy</a>
-    <a href="index.html" class="nav-back">â Return</a>
+    <a href="index.html" class="nav-back">← Return</a>
   </nav>
   <section class="hero">
     <span class="hero-overline">Group Sessions</span>
@@ -107,61 +114,25 @@
   </section>
   <main class="page-content">
     <div class="approved-copy">
-      <p>Have you noticed that the âLove and Lightâ systems arenât actually providing the clearing youâre seeking? Youâve done the meditations, youâve sat in the circles, and youâve raised your vibrationâbut has the baseline of your life actually changed? Or do you still feel that heavy, familiar drag in your biology that feels like it doesnât even belong to you?</p>
-      <p>If you are tired of temporary relief and are looking for structural change, this is why the Circle exists. This isnât a space for âcopingâ with your baggage; itâs a space for extracting it.</p>
+      <p>Have you noticed that the “Love and Light” systems aren’t actually providing the clearing you’re seeking? You’ve done the meditations, you’ve sat in the circles, and you’ve raised your vibration—but has the baseline of your life actually changed? Or do you still feel that heavy, familiar drag in your biology that feels like it doesn’t even belong to you?</p>
+      <p>If you are tired of temporary relief and are looking for structural change, this is why the Circle exists. This isn’t a space for “coping” with your baggage; it’s a space for extracting it.</p>
     </div>
     <div class="circle-integrity">
       <h3>The Integrity of the Circle</h3>
       <p>This is a 75-minute high-frequency containment field. It is a surgical environment where we move past the fluff to address the structural integrity of your field.</p>
-      <p>Are you ready to stop managing the âjunk codeâ of your ancestors and start deleting it? Are you ready to see the specific knots in your web and actually unravel them? Are you ready to find out who you are when you arenât a host for someone elseâs trauma?</p>
-      <p>We donât come here to escape. We come here to track, extract, and anchor your own sovereign frequency back into your physical body.</p>
+      <p>Are you ready to stop managing the “junk code” of your ancestors and start deleting it? Are you ready to see the specific knots in your web and actually unravel them? Are you ready to find out who you are when you aren’t a host for someone else’s trauma?</p>
+      <p>We don’t come here to escape. We come here to track, extract, and anchor your own sovereign frequency back into your physical body.</p>
     </div>
     <hr class="gold-rule">
     <span class="section-label">Secure Your Spot</span>
-    <h2 class="section-heading">Select a Circle Date</h2>
-    <div class="cal-wrapper" id="calWrapper">
-      <div class="cal-loading" id="calLoading">Loading availability...</div>
-      <div id="calReady" style="display:none">
-        <div class="cal-nav">
-          <button class="cal-btn" id="prevMonth" onclick="changeMonth(-1)">&larr;</button>
-          <span class="cal-month" id="calMonthLabel"></span>
-          <button class="cal-btn" id="nextMonth" onclick="changeMonth(1)">&rarr;</button>
-        </div>
-        <div class="cal-grid" id="calGrid"></div>
-      </div>
-      <div class="slots-panel" id="slotsPanel">
-        <p class="slots-label" id="slotsDateLabel">Available times</p>
-        <div class="slots-grid" id="slotsGrid"></div>
-      </div>
-      <div class="booking-form" id="bookingForm">
-        <div class="booking-summary" id="bookingSummary"></div>
-        <form id="reserveForm" onsubmit="submitBooking(event)">
-          <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off">
-          <div class="form-group"><label class="form-label" for="fname">Full Name</label><input class="form-input" type="text" id="fname" name="name" required placeholder="Your full name"></div>
-          <div class="form-group"><label class="form-label" for="femail">Email Address</label><input class="form-input" type="email" id="femail" name="email" required placeholder="your@email.com"></div>
-          <div class="form-group"><label class="form-label" for="fphone">Phone Number</label><input class="form-input" type="tel" id="fphone" name="phone" required placeholder="+1 (000) 000-0000"></div>
-          <div class="form-group"><label class="form-label" for="fmessage">Message (Optional)</label><textarea class="form-input" id="fmessage" name="message" rows="3" placeholder="Anything you'd like to share before joining the Circle"></textarea></div>
-          <button type="submit" class="btn-submit" id="submitBtn">Secure My Spot</button>
-        </form>
-        <div class="form-status" id="formStatus"></div>
-      </div>
-    </div>
+    <h2 class="section-heading">Begin with a Discovery Call</h2>
+    <p class="stan-note">Circle dates are confirmed directly with Kalista. Book a free 30-minute discovery call to find your place in the next Circle.</p>
+    <div class="stan-actions"><a class="stan-link" href="https://stan.store/whiteflamelegacy/p/free-30minute-discovery-call-v73fwqjh?lang=en">Book My Free Call on Stan</a><a class="stan-link" href="mailto:kalistawhiteflame@gmail.com">Email Kalista Directly</a></div>
     <div class="corp-section">
       <span class="section-label">Corporate Enquiries</span>
       <h3>Bring the Circle to Your Organisation</h3>
       <p>The Circle can be privately facilitated for corporate teams, leadership groups, and organisations. Contact us with your details and we will be in touch.</p>
-      <form id="corpForm" onsubmit="submitCorp(event)">
-        <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off">
-        <div class="form-group"><label class="form-label" for="cOrg">Organisation Name</label><input class="form-input" type="text" id="cOrg" name="org" required placeholder="Organisation name"></div>
-        <div class="form-group"><label class="form-label" for="cContact">Contact Person</label><input class="form-input" type="text" id="cContact" name="contact" required placeholder="Your full name"></div>
-        <div class="form-group"><label class="form-label" for="cEmail">Email Address</label><input class="form-input" type="email" id="cEmail" name="email" required placeholder="your@email.com"></div>
-        <div class="form-group"><label class="form-label" for="cPhone">Phone Number</label><input class="form-input" type="tel" id="cPhone" name="phone" required placeholder="+1 (000) 000-0000"></div>
-        <div class="form-group"><label class="form-label" for="cLocation">Location / City</label><input class="form-input" type="text" id="cLocation" name="location" required placeholder="City, Country"></div>
-        <div class="form-group"><label class="form-label" for="cDates">Preferred Date Range</label><input class="form-input" type="text" id="cDates" name="dates" placeholder="e.g. June 2026 or flexible"></div>
-        <div class="form-group"><label class="form-label" for="cAttendees">Estimated Attendees</label><input class="form-input" type="number" id="cAttendees" name="attendees" min="1" placeholder="Number of people"></div>
-        <button type="submit" class="btn-submit" id="corpSubmitBtn" style="width:auto;padding:1rem 2.5rem">Send Enquiry</button>
-      </form>
-      <div class="form-status" id="corpFormStatus"></div>
+      <div class="stan-actions"><a class="stan-link" href="mailto:kalistawhiteflame@gmail.com?subject=Corporate%20Circle%20Enquiry">Send a Corporate Enquiry</a></div>
     </div>
   </main>
   <footer>
@@ -173,164 +144,5 @@
     </nav>
     <p class="footer-copy">&copy; 2025 White Flame Legacy. All Rights Reserved.<br>All content is the intellectual property of White Flame Legacy and Kalista.<br>Unauthorized reproduction is strictly prohibited.</p>
   </footer>
-  <script>
-    const DISPATCH_TOKEN = 'PASTE_YOUR_DISPATCH_TOKEN_HERE';
-    const SERVICE = 'quantum_activation_circles';
-    const MAX_PER_SLOT = 12;
-    let availability = null, currentDate = new Date(), selectedDate = null, selectedSlot = null;
-    currentDate.setDate(1);
-    const DAYS = ['Su','Mo','Tu','We','Th','Fr','Sa'];
-    const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-
-    async function loadAvailability() {
-      try {
-        const r = await fetch('/data/availability.json?t=' + Date.now());
-        availability = await r.json();
-        document.getElementById('calLoading').style.display = 'none';
-        document.getElementById('calReady').style.display = 'block';
-        renderCalendar();
-      } catch(e) {
-        document.getElementById('calLoading').textContent = 'Unable to load. Please email kalistawhiteflame@gmail.com to enquire.';
-      }
-    }
-
-    function getServiceDates() { return (availability && availability[SERVICE] && availability[SERVICE].dates) || []; }
-    function getMaxPerSlot() { return (availability && availability[SERVICE] && availability[SERVICE].max_per_slot) || MAX_PER_SLOT; }
-    function getDateEntry(dateStr) { return getServiceDates().find(d => d.date === dateStr) || null; }
-    function spotsLeft(slot) { return Math.max(0, getMaxPerSlot() - (slot.booked_count || 0)); }
-
-    function renderCalendar() {
-      const y = currentDate.getFullYear(), m = currentDate.getMonth();
-      document.getElementById('calMonthLabel').textContent = MONTHS[m] + ' ' + y;
-      const today = new Date(); today.setHours(0,0,0,0);
-      const firstDay = new Date(y, m, 1).getDay(), daysInMonth = new Date(y, m+1, 0).getDate();
-      const availDates = getServiceDates().map(d => d.date);
-      let html = DAYS.map(d => '<div class="cal-header">' + d + '</div>').join('');
-      for (let i = 0; i < firstDay; i++) html += '<div class="cal-day empty"></div>';
-      for (let day = 1; day <= daysInMonth; day++) {
-        const date = new Date(y, m, day);
-        const dateStr = y + '-' + String(m+1).padStart(2,'0') + '-' + String(day).padStart(2,'0');
-        const isPast = date < today;
-        const entry = getDateEntry(dateStr);
-        const totalSpots = entry ? entry.slots.reduce((a,s) => a + spotsLeft(s), 0) : 0;
-        const isFull = entry && totalSpots === 0;
-        const isAvail = availDates.includes(dateStr) && !isPast && !isFull;
-        const isSel = selectedDate === dateStr;
-        let cls = 'cal-day';
-        if (isPast) cls += ' past';
-        else if (isSel) cls += ' available selected';
-        else if (isAvail) cls += ' available';
-        else if (isFull) cls += ' full';
-        const onclick = isAvail ? ' onclick="selectDate('' + dateStr + '')"' : '';
-        const spotsHtml = isAvail ? '<span class="spots">' + totalSpots + ' left</span>' : '';
-        html += '<div class="' + cls + '"' + onclick + '><span class="day-num">' + day + '</span>' + spotsHtml + '</div>';
-      }
-      document.getElementById('calGrid').innerHTML = html;
-      const prevBtn = document.getElementById('prevMonth');
-      prevBtn.disabled = y === today.getFullYear() && m <= today.getMonth();
-    }
-
-    function changeMonth(dir) { currentDate.setMonth(currentDate.getMonth() + dir); renderCalendar(); }
-
-    function selectDate(dateStr) {
-      selectedDate = dateStr; selectedSlot = null;
-      renderCalendar();
-      const entry = getDateEntry(dateStr);
-      if (!entry) return;
-      const [y,mo,d] = dateStr.split('-');
-      const label = MONTHS[parseInt(mo)-1] + ' ' + parseInt(d) + ', ' + y;
-      document.getElementById('slotsDateLabel').textContent = 'Available times â ' + label;
-      const grid = document.getElementById('slotsGrid');
-      grid.innerHTML = entry.slots.filter(s => spotsLeft(s) > 0).map(s => {
-        const [h,min] = s.time.split(':');
-        const hr = parseInt(h);
-        const ampm = hr >= 12 ? 'PM' : 'AM';
-        const disp = (hr > 12 ? hr-12 : hr) + ':' + min + ' ' + ampm;
-        const left = spotsLeft(s);
-        return '<button class="slot-btn" onclick="selectSlot('' + s.time + '','' + disp + '')">' + disp + '<br><small style="font-size:0.55rem;letter-spacing:0.08em;opacity:0.7">' + left + ' spot' + (left===1?'':'s') + ' remaining</small></button>';
-      }).join('');
-      document.getElementById('slotsPanel').classList.add('active');
-      document.getElementById('bookingForm').classList.remove('active');
-      document.getElementById('slotsPanel').scrollIntoView({behavior:'smooth', block:'nearest'});
-    }
-
-    function selectSlot(time24, display) {
-      selectedSlot = time24;
-      document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('selected'));
-      event.currentTarget.classList.add('selected');
-      const [y,mo,d] = selectedDate.split('-');
-      const label = MONTHS[parseInt(mo)-1] + ' ' + parseInt(d) + ', ' + y;
-      document.getElementById('bookingSummary').innerHTML = 'Quantum Activation Circle &nbsp;&bull;&nbsp; <strong>' + label + ' at ' + display + '</strong><br><span style="font-size:0.8rem;opacity:0.7">$88 per person &bull; 75 minutes</span>';
-      document.getElementById('bookingForm').classList.add('active');
-      document.getElementById('bookingForm').scrollIntoView({behavior:'smooth', block:'nearest'});
-    }
-
-    async function submitBooking(e) {
-      e.preventDefault();
-      if (document.querySelector('#reserveForm .honeypot').value) return;
-      const btn = document.getElementById('submitBtn');
-      btn.disabled = true; btn.textContent = 'Processing...';
-      const status = document.getElementById('formStatus');
-      status.className = 'form-status';
-      const payload = {
-        service: 'Quantum Activation Circles', date: selectedDate, time: selectedSlot,
-        name: document.getElementById('fname').value.trim(),
-        email: document.getElementById('femail').value.trim(),
-        phone: document.getElementById('fphone').value.trim(),
-        message: document.getElementById('fmessage').value.trim(),
-        bookingId: 'QAC-' + Date.now().toString(36).toUpperCase()
-      };
-      try {
-        const r = await fetch('https://api.github.com/repos/whiteflamelegacy/white-flame-legacy/dispatches', {
-          method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token ' + DISPATCH_TOKEN},
-          body: JSON.stringify({event_type: 'booking', client_payload: payload})
-        });
-        if (r.status === 204 || r.ok) {
-          document.getElementById('reserveForm').style.display = 'none';
-          status.className = 'form-status success';
-          status.innerHTML = 'Your spot is secured. A confirmation will be sent to ' + payload.email + '.<span class="booking-id">Ref: ' + payload.bookingId + '</span>';
-        } else throw new Error('Error ' + r.status);
-      } catch(err) {
-        status.className = 'form-status error';
-        status.innerHTML = 'Technical issue. Please email <strong>kalistawhiteflame@gmail.com</strong> to secure your spot directly.';
-        btn.disabled = false; btn.textContent = 'Secure My Spot';
-      }
-    }
-
-    async function submitCorp(e) {
-      e.preventDefault();
-      if (document.querySelector('#corpForm .honeypot').value) return;
-      const btn = document.getElementById('corpSubmitBtn');
-      btn.disabled = true; btn.textContent = 'Sending...';
-      const status = document.getElementById('corpFormStatus');
-      const payload = {
-        type: 'corporate_enquiry',
-        org: document.getElementById('cOrg').value.trim(),
-        contact: document.getElementById('cContact').value.trim(),
-        email: document.getElementById('cEmail').value.trim(),
-        phone: document.getElementById('cPhone').value.trim(),
-        location: document.getElementById('cLocation').value.trim(),
-        dates: document.getElementById('cDates').value.trim(),
-        attendees: document.getElementById('cAttendees').value.trim()
-      };
-      try {
-        const r = await fetch('https://api.github.com/repos/whiteflamelegacy/white-flame-legacy/dispatches', {
-          method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token ' + DISPATCH_TOKEN},
-          body: JSON.stringify({event_type: 'corporate_enquiry', client_payload: payload})
-        });
-        if (r.status === 204 || r.ok) {
-          document.getElementById('corpForm').style.display = 'none';
-          status.className = 'form-status success';
-          status.innerHTML = 'Enquiry received. Kalista will be in touch with you directly.';
-        } else throw new Error('Error ' + r.status);
-      } catch(err) {
-        status.className = 'form-status error';
-        status.innerHTML = 'Technical issue. Please email <strong>kalistawhiteflame@gmail.com</strong> with your enquiry directly.';
-        btn.disabled = false; btn.textContent = 'Send Enquiry';
-      }
-    }
-
-    loadAvailability();
-  </script>
 </body>
       </html>

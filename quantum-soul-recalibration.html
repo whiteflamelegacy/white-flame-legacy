@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quantum Soul Recalibration â White Flame Legacy</title>
+  <title>Quantum Soul Recalibration — White Flame Legacy</title>
   <meta name="description" content="Private 1-on-1 sessions with Kalista. Structural recalibration at the field level. $180 single session / $250 package.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,7 +45,7 @@
     .price-amount { font-family: 'Cinzel', serif; font-size: 2.2rem; font-weight: 400; color: var(--gold); letter-spacing: 0.05em; display: block; margin-bottom: 0.4rem; }
     .price-label { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 300; letter-spacing: 0.25em; color: var(--text-dim); text-transform: uppercase; }
     hr.gold-rule { border: none; height: 1px; background: linear-gradient(to right, transparent, rgba(201,168,76,0.3), transparent); margin: 4rem 0; }
-    /* ââ CALENDAR ââ */
+    /* ── CALENDAR ── */
     .cal-section { margin-top: 2rem; }
     .cal-wrapper { background: rgba(10,8,18,0.8); border: 1px solid rgba(201,168,76,0.15); padding: 2.5rem; }
     .cal-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
@@ -97,12 +97,19 @@
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @media (max-width: 768px) { nav { padding: 1.2rem 1.5rem; } .cal-wrapper { padding: 1.5rem; } .pricing-bar { flex-direction: column; } }
+
+    .stan-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 1.5rem 0; }
+    .stan-link { display: inline-block; border: 1px solid rgba(201,168,76,0.5); padding: 0.85rem 1.3rem; color: var(--gold-light); font-family: 'Raleway', sans-serif; font-size: 0.75rem; letter-spacing: 0.12em; text-decoration: none; line-height: 1.6; }
+    .stan-link:hover { background: rgba(201,168,76,0.1); }
+    .stan-link:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+    .stan-note { color: var(--text-secondary); font-size: 1rem; max-width: 620px; margin: 0 auto 2rem; }
+    footer .footer-links { position: static; background: none; border: none; padding: 0; flex-wrap: wrap; }
   </style>
 </head>
 <body>
   <nav>
     <a href="index.html" class="nav-brand">White Flame Legacy</a>
-    <a href="index.html" class="nav-back">â Return</a>
+    <a href="index.html" class="nav-back">← Return</a>
   </nav>
   <section class="hero">
     <span class="hero-overline">Private 1-on-1</span>
@@ -113,13 +120,13 @@
   <main class="page-content">
     <span class="section-label">The Work</span>
     <h2 class="section-heading">What Happens in a Session</h2>
-    <p>This is not a coaching call. It is not a reading. It is a precision intervention into the structural integrity of your field â conducted in real time, with clinical focus on the specific code running beneath your patterns.</p>
+    <p>This is not a coaching call. It is not a reading. It is a precision intervention into the structural integrity of your field — conducted in real time, with clinical focus on the specific code running beneath your patterns.</p>
     <p>Each session is 60 minutes. You arrive with whatever is present. We locate, isolate, and extract what doesn't belong to you. You leave with your baseline measurably different from when you arrived.</p>
 
     <div class="phases">
       <div class="phase" data-num="Phase I">
         <h3>Field Assessment</h3>
-        <p>We map the current state of your operating system. Not through what you tell me â through what I can read in the field. What is running, where it originated, how deeply it is embedded.</p>
+        <p>We map the current state of your operating system. Not through what you tell me — through what I can read in the field. What is running, where it originated, how deeply it is embedded.</p>
       </div>
       <div class="phase" data-num="Phase II">
         <h3>Code Identification</h3>
@@ -131,7 +138,7 @@
       </div>
       <div class="phase" data-num="Phase IV">
         <h3>Frequency Anchoring</h3>
-        <p>Your sovereign frequency is anchored back into your physical body. This is the recalibration. The system is reset to your actual baseline â not a healed version of your old self. You.</p>
+        <p>Your sovereign frequency is anchored back into your physical body. This is the recalibration. The system is reset to your actual baseline — not a healed version of your old self. You.</p>
       </div>
     </div>
 
@@ -150,46 +157,9 @@
 
     <div class="cal-section">
       <span class="section-label">Book Your Session</span>
-      <h2 class="section-heading">Select a Date &amp; Time</h2>
-      <div class="cal-wrapper" id="calWrapper">
-        <div class="cal-loading" id="calLoading">Loading availability...</div>
-        <div id="calReady" style="display:none">
-          <div class="cal-nav">
-            <button class="cal-btn" id="prevMonth" onclick="changeMonth(-1)">&larr;</button>
-            <span class="cal-month" id="calMonthLabel"></span>
-            <button class="cal-btn" id="nextMonth" onclick="changeMonth(1)">&rarr;</button>
-          </div>
-          <div class="cal-grid" id="calGrid"></div>
-        </div>
-        <div class="slots-panel" id="slotsPanel">
-          <p class="slots-label" id="slotsDateLabel">Available times</p>
-          <div class="slots-grid" id="slotsGrid"></div>
-        </div>
-        <div class="booking-form" id="bookingForm">
-          <div class="booking-summary" id="bookingSummary"></div>
-          <form id="reserveForm" onsubmit="submitBooking(event)">
-            <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off">
-            <div class="form-group">
-              <label class="form-label" for="fname">Full Name</label>
-              <input class="form-input" type="text" id="fname" name="name" required placeholder="Your full name">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="femail">Email Address</label>
-              <input class="form-input" type="email" id="femail" name="email" required placeholder="your@email.com">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="fphone">Phone Number</label>
-              <input class="form-input" type="tel" id="fphone" name="phone" required placeholder="+1 (000) 000-0000">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="fmessage">Message (Optional)</label>
-              <textarea class="form-input" id="fmessage" name="message" rows="3" placeholder="Anything you'd like Kalista to know before your session"></textarea>
-            </div>
-            <button type="submit" class="btn-submit" id="submitBtn">Reserve My Session</button>
-          </form>
-          <div class="form-status" id="formStatus"></div>
-        </div>
-      </div>
+      <h2 class="section-heading">Begin with a Discovery Call</h2>
+      <p class="stan-note">Every private session starts with a free 30-minute discovery call. We look at what's coming up in your lineage and confirm your session together.</p>
+      <div class="stan-actions"><a class="stan-link" href="https://stan.store/whiteflamelegacy/p/free-30minute-discovery-call-v73fwqjh?lang=en">Book My Free Call on Stan</a><a class="stan-link" href="mailto:kalistawhiteflame@gmail.com">Email Kalista Directly</a></div>
     </div>
   </main>
   <footer>
@@ -201,155 +171,5 @@
     </nav>
     <p class="footer-copy">&copy; 2025 White Flame Legacy. All Rights Reserved.<br>All content is the intellectual property of White Flame Legacy and Kalista.<br>Unauthorized reproduction is strictly prohibited.</p>
   </footer>
-
-  <script>
-    const DISPATCH_TOKEN = 'PASTE_YOUR_DISPATCH_TOKEN_HERE';
-    const SERVICE = 'quantum_soul_recalibration';
-    let availability = null;
-    let currentDate = new Date();
-    currentDate.setDate(1);
-    let selectedDate = null;
-    let selectedSlot = null;
-    const DAYS = ['Su','Mo','Tu','We','Th','Fr','Sa'];
-    const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-
-    async function loadAvailability() {
-      try {
-        const r = await fetch('/data/availability.json?t=' + Date.now());
-        availability = await r.json();
-        document.getElementById('calLoading').style.display = 'none';
-        document.getElementById('calReady').style.display = 'block';
-        renderCalendar();
-      } catch(e) {
-        document.getElementById('calLoading').textContent = 'Unable to load availability. Please email kalistawhiteflame@gmail.com to book.';
-      }
-    }
-
-    function getServiceDates() {
-      if (!availability) return [];
-      return (availability[SERVICE] && availability[SERVICE].dates) || [];
-    }
-
-    function getDateSlots(dateStr) {
-      return getServiceDates().find(d => d.date === dateStr) || null;
-    }
-
-    function isFullyBooked(dateEntry) {
-      if (!dateEntry) return false;
-      return dateEntry.slots.every(s => s.booked);
-    }
-
-    function renderCalendar() {
-      const y = currentDate.getFullYear();
-      const m = currentDate.getMonth();
-      document.getElementById('calMonthLabel').textContent = MONTHS[m] + ' ' + y;
-      const today = new Date(); today.setHours(0,0,0,0);
-      const firstDay = new Date(y, m, 1).getDay();
-      const daysInMonth = new Date(y, m+1, 0).getDate();
-      const serviceDates = getServiceDates();
-      const availDateStrs = serviceDates.map(d => d.date);
-      let html = DAYS.map(d => '<div class="cal-header">' + d + '</div>').join('');
-      for (let i = 0; i < firstDay; i++) html += '<div class="cal-day empty"></div>';
-      for (let day = 1; day <= daysInMonth; day++) {
-        const date = new Date(y, m, day);
-        const dateStr = y + '-' + String(m+1).padStart(2,'0') + '-' + String(day).padStart(2,'0');
-        const isPast = date < today;
-        const isToday = date.getTime() === today.getTime();
-        const dateEntry = getDateSlots(dateStr);
-        const isAvail = availDateStrs.includes(dateStr) && !isPast && !isFullyBooked(dateEntry);
-        const isBooked = availDateStrs.includes(dateStr) && !isPast && isFullyBooked(dateEntry);
-        const isSel = selectedDate === dateStr;
-        let cls = 'cal-day';
-        if (isPast) cls += ' past';
-        else if (isSel) cls += ' available selected';
-        else if (isAvail) cls += ' available';
-        else if (isBooked) cls += ' booked';
-        if (isToday) cls += ' today';
-        const onclick = isAvail ? 'selectDate("'+dateStr+'")' : '';
-        html += '<div class="'+cls+'"' + (onclick ? ' onclick="'+onclick+'"' : '') + ' title="' + (isBooked ? 'Fully booked' : '') + '">' + day + '</div>';
-      }
-      document.getElementById('calGrid').innerHTML = html;
-      document.getElementById('prevMonth').disabled = (currentDate <= today) || (y === today.getFullYear() && m <= today.getMonth());
-    }
-
-    function changeMonth(dir) {
-      currentDate.setMonth(currentDate.getMonth() + dir);
-      renderCalendar();
-    }
-
-    function selectDate(dateStr) {
-      selectedDate = dateStr;
-      selectedSlot = null;
-      renderCalendar();
-      const entry = getDateSlots(dateStr);
-      if (!entry) return;
-      const [y,mo,d] = dateStr.split('-');
-      const label = MONTHS[parseInt(mo)-1] + ' ' + parseInt(d) + ', ' + y;
-      document.getElementById('slotsDateLabel').textContent = 'Available times â ' + label;
-      const grid = document.getElementById('slotsGrid');
-      grid.innerHTML = entry.slots.filter(s => !s.booked).map(s => {
-        const [h,min] = s.time.split(':');
-        const hr = parseInt(h);
-        const ampm = hr >= 12 ? 'PM' : 'AM';
-        const disp = (hr > 12 ? hr-12 : hr) + ':' + min + ' ' + ampm;
-        return '<button class="slot-btn" onclick="selectSlot('' + s.time + '','' + disp + '')">' + disp + '</button>';
-      }).join('');
-      document.getElementById('slotsPanel').classList.add('active');
-      document.getElementById('bookingForm').classList.remove('active');
-      document.getElementById('slotsPanel').scrollIntoView({behavior:'smooth', block:'nearest'});
-    }
-
-    function selectSlot(time24, display) {
-      selectedSlot = time24;
-      document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('selected'));
-      event.target.classList.add('selected');
-      const [y,mo,d] = selectedDate.split('-');
-      const label = MONTHS[parseInt(mo)-1] + ' ' + parseInt(d) + ', ' + y;
-      document.getElementById('bookingSummary').innerHTML = 'Quantum Soul Recalibration &nbsp;&bull;&nbsp; <strong>' + label + ' at ' + display + '</strong>';
-      document.getElementById('bookingForm').classList.add('active');
-      document.getElementById('bookingForm').scrollIntoView({behavior:'smooth', block:'nearest'});
-    }
-
-    async function submitBooking(e) {
-      e.preventDefault();
-      const hp = document.querySelector('.honeypot');
-      if (hp && hp.value) return;
-      const btn = document.getElementById('submitBtn');
-      btn.disabled = true;
-      btn.textContent = 'Processing...';
-      const status = document.getElementById('formStatus');
-      status.className = 'form-status';
-      const payload = {
-        service: 'Quantum Soul Recalibration',
-        date: selectedDate, time: selectedSlot,
-        name: document.getElementById('fname').value.trim(),
-        email: document.getElementById('femail').value.trim(),
-        phone: document.getElementById('fphone').value.trim(),
-        message: document.getElementById('fmessage').value.trim(),
-        bookingId: 'QSR-' + Date.now().toString(36).toUpperCase()
-      };
-      try {
-        const r = await fetch('https://api.github.com/repos/whiteflamelegacy/white-flame-legacy/dispatches', {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json', 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token ' + DISPATCH_TOKEN},
-          body: JSON.stringify({event_type: 'booking', client_payload: payload})
-        });
-        if (r.status === 204 || r.ok) {
-          document.getElementById('reserveForm').style.display = 'none';
-          status.className = 'form-status success';
-          status.innerHTML = 'Your session is reserved. A confirmation will be sent to ' + payload.email + '.<span class="booking-id">Ref: ' + payload.bookingId + '</span>';
-        } else {
-          throw new Error('Server error ' + r.status);
-        }
-      } catch(err) {
-        status.className = 'form-status error';
-        status.innerHTML = 'We encountered a technical issue. Please email <strong>kalistawhiteflame@gmail.com</strong> to book your session directly, quoting your preferred date and time.';
-        btn.disabled = false;
-        btn.textContent = 'Reserve My Session';
-      }
-    }
-
-    loadAvailability();
-  </script>
 </body>
                                                                                     </html>
